@@ -1,121 +1,153 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
     font-size: 1.15rem;
+    box-sizing: border-box;
 }
 
-.box {
+
+.box2 {
     display: flex;
     flex-direction: row;
 }
 
-.left-container {
+.left-container2 {
     width: 50vw;
-    padding-top: 2%;
+    padding-top: 5%;
     padding-bottom: 2%;
     height: fit-content;
 }
 
-.content {
-    padding-left: 10%;
-    padding-right: 10%;
+.content2 {
+    padding-left: 20%;
+    padding-right: 20%;
 }
 
-.right-container {
+.right-container2 {
     width: 50%;
     padding-top: 2%;
     padding-bottom: 2%;
 }
 
-.image-placeholder {
+.image-placeholder2 {
     background-color: var(--color-yellow);
     border-radius: 10px;
     margin-right: 5%;
     height: 100%;
 }
 
-.logo-app {
+.logo2 {
     object-fit: contain;
-    max-width: 10%;
-    max-height: 10%;
+    max-width: 20%;
+    max-height: 20%;
     width: auto;
     height: auto;
 }
 
-.header-container {
+.header-container2 {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    margin-bottom: 15px;
 }
 
-.header {
+.header2 {
     margin-left: 10px;
+    margin-top: 10px;
     font-size: 1.5em;
     color: var(--color-red);
 }
 
-.form-container {
+.name-container {
     display: flex;
-    flex-direction: column;
-    width: 100%;
+    box-sizing: border-box;
+    gap: 1rem;
 }
 
-.form-container label {
+#lastName {
+    box-sizing: border-box;
+}
+
+.form-container2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container2 label {
     display: table-row;
     margin-left: 8px;
     margin-bottom: 5px;
     margin-top: 10px;
 }
 
-.form-container input {
+.form-container2 .input {
     height: 2em;
-    padding-left: 20px;
+    padding-left: 15px;
     border-radius: 10px;
     border-width: 1px;
+    box-sizing: border-box;
+    width: 100%;
 }
 
-.form-container select {
+.form-container2 select {
     height: 2em;
     padding-left: 10px;
     border-radius: 10px;
     border-width: 1px;
 }
 
-.form-container .radio-container {
-    display: flex;
-    justify-content: space-between;
-    padding-right: 20px;
+.pwd-reqs {
+    width: 75%;
+    margin-top: 10px;
+    margin-left: 30px;
+    color: #545454;
 }
 
-#radio-opts {
-   margin-top: 10px;
-   margin-bottom: 0;
+.pwd-reqs p {
+    margin-bottom: 10px;
+    font-size: smaller;
 }
 
-input[type="radio"] {
+.pwd-reqs label#checkbox {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.validation2 {
+    color: red;
+    margin-top: 5px;
+}
+
+#checkbox {
+    margin-top: 10px;
+    font-size: smaller;
+}
+
+.pwd-reqs #checkbox input[type="checkbox"] {
+    margin-left: 10px;
     vertical-align: middle;
     margin-right: 10px;
     accent-color: var(--color-blue);
+    transform: scale(1.75);
+    font-size: smaller;
 }
 
-.form-container .radio-container .radio-inputs {
-    display: flex;
-    width: 25%;
-    justify-content: space-between;
-}
-
-.acc-req {
+.acc-req2 {
     margin-top: 20px;
     text-align: center;
 }
 
-#link-to {
+#link-to2 {
     color: var(--color-blue);
 }
 
-.signup-btn {
+.signup-btn2,
+.signup-btn2:hover {
     background-color: var(--color-red);
     color: white;
     border-radius: 10px;
@@ -124,4 +156,5 @@ input[type="radio"] {
     padding-bottom: .5rem;
     margin-top: 10px;
     font-weight: 500;
+    cursor: pointer;
 }
