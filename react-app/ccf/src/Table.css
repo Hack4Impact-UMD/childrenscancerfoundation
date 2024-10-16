@@ -1,0 +1,137 @@
+.proposals-container {
+    width: 100%;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .proposals-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .tabs {
+    display: flex;
+    margin-right: auto;
+    gap: 10px;
+  }
+  
+  .tab {
+    background: #f0f0f0;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 15px;
+  }
+  
+  .tab.active {
+    background: #ccc;
+    font-weight: bold;
+  }
+  
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .assign-button,
+  .sort-button {
+    background: #f0f0f0;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .search-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+  }
+  
+  .proposal-list {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .proposal-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f8f8f8;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .proposal-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .icon-placeholder {
+    width: 50px;
+    height: 50px;
+    background-color: #ccc;
+    border-radius: 50%;
+  }
+  
+  .proposal-details h3 {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  .proposal-details p {
+    margin: 2px 0;
+    color: #666;
+    font-size: 14px;
+  }
+  
+  .proposal-status {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .proposal-status .reviewed {
+    color: green;
+  }
+  
+  .proposal-status .pending {
+    color: red;
+  }
+  
+  .status {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .status.incomplete {
+    background: #ffe0b2;
+    color: #ff9800;
+  }
+  
+  .status.funded {
+    background: #d0e9c6;
+    color: #4caf50;
+  }
+  
+  .status.not-funded {
+    background: #f2dede;
+    color: #d9534f;
+  }
+  
+  .details-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #666;
+    cursor: pointer;
+    font-weight: bold;
+  }

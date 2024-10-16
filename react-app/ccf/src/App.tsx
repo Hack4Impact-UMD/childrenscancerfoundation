@@ -1,5 +1,6 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Table from './table';
 
 function App(): JSX.Element {
   return (
@@ -47,7 +48,7 @@ function App(): JSX.Element {
         <Route
           path="/admin" 
           element={
-            <></>
+            <><Table/></>
           } 
         />      
       </Routes>
