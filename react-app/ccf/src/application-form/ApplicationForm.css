@@ -7,3 +7,51 @@
     font-size: 1.15rem;
     box-sizing: border-box;
 }
+
+.main-container {
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.main-header {
+    color: var(--color-red);
+    font-size: 2rem;
+    margin-bottom: 1%;
+    padding-left: 1%;
+    font-weight: 700;
+}
+
+.form-header {
+    color: var(--color-red);
+    font-size: 1.75rem;
+    text-align: center;
+    margin-top: 2%;
+    font-weight: 700;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.back-btn {
+    background-color: var(--color-red);
+    color: white;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+    border: transparent;
+}
+
+.save-btn {
+    background-color: var(--color-red);
+    color: white;
+    padding-left: 10%;
+    padding-right: 10%;
+    border-radius: 20px;
+    border: transparent;
+}
