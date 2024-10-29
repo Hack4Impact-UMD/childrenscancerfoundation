@@ -1,4 +1,4 @@
-import "./Table.css"; 
+import "./Table.css";
 
 const Table = () => {
   // Dummy data for proposals
@@ -33,15 +33,17 @@ const Table = () => {
     <div className="proposals-container">
       <header className="proposals-header">
         <h2>PROPOSALS</h2>
-        <div className="tabs">
-          <button className="tab active">ACTIVE</button>
-          <button className="tab">ARCHIVE</button>
-          <button className="tab">IN PROGRESS</button>
-        </div>
-        <div className="actions">
-          <button className="assign-button">Assign Review</button>
-          <input type="text" placeholder="Search" className="search-input" />
-          <button className="sort-button">Sort by</button>
+        <div className="options">
+          <div className="tabs">
+            <button className="tab active">ACTIVE</button>
+            <button className="tab">ARCHIVE</button>
+            <button className="tab">IN PROGRESS</button>
+          </div>
+          <div className="actions">
+            <button className="assign-button">Assign Review</button>
+            <input type="text" placeholder="Search" className="search-input" />
+            <button className="sort-button">Sort by</button>
+          </div>
         </div>
       </header>
 
@@ -59,7 +61,11 @@ const Table = () => {
             <div className="proposal-status">
               <span className="reviewed">Reviewed {proposal.reviewed}</span>
               <span className="pending">Pending {proposal.pending}</span>
-              <span className={`status ${proposal.status.replace(" ", "-").toLowerCase()}`}>
+              <span
+                className={`status ${proposal.status
+                  .replace(" ", "-")
+                  .toLowerCase()}`}
+              >
                 {proposal.status}
               </span>
             </div>
