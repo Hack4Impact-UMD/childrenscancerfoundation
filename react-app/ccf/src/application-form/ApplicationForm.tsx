@@ -4,11 +4,12 @@ import Breadcrumb from './Components/Breadcrumbs';
 import { useNavigate } from 'react-router-dom';
 import Information from './subquestions/Information';
 import ApplicationQuestions from './subquestions/ApplicationQuestions';
+import GrantForm from './subquestions/GrantForm';
 
 function ApplicationForm(): JSX.Element {
     const [currentPage, setCurrentPage] = useState(1);
     const pages = ["My Information", "Application Questions", "Grant Proposal", "Review"];
-    const totalPages = 5;
+    const totalPages = pages.length;
 
     const navigate = useNavigate();
 
@@ -34,6 +35,8 @@ function ApplicationForm(): JSX.Element {
             return <Information />
           case 2:
             return <ApplicationQuestions />
+          case 3:
+            return <GrantForm />
           default:
             return
         }
