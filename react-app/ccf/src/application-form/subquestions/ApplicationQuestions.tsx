@@ -1,7 +1,20 @@
 import { useState } from "react";
 import "./SubForm.css";
 
-function ApplicationQuestions(): JSX.Element {
+interface ApplicationQuestionsProps {
+  formData: any;
+  setFormData: (data: any) => void;
+}
+
+function ApplicationQuestions({ formData, setFormData }: ApplicationQuestionsProps): JSX.Element {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value, type } = e.target;
+    setFormData((prevData: any) => ({
+      ...prevData,
+      [name]: type === 'radio' && e.target.checked ? value : value,
+    }));
+  };
+
   return (
     <div className="form-container">
       <div className="left-container">
@@ -11,16 +24,16 @@ function ApplicationQuestions(): JSX.Element {
         </p>
         <div className="radio-opts">
           <div className="radio-opt">
-            <input type="radio" name="published" />
+            <input type="radio" name="published" value="Yes" checked={formData.published === "Yes"} onChange={handleChange}/>
             <label className="radio-label">Yes</label>
           </div>
           <div className="radio-opt">
-            <input type="radio" name="published" />
+            <input type="radio" name="published" value="No" checked={formData.published === "No"} onChange={handleChange}/>
             <label className="radio-label">No</label>
           </div>
 
           <div className="radio-opt">
-            <input type="radio" name="published" />
+            <input type="radio" name="published" value="N/A" checked={formData.published === "N/A"} onChange={handleChange}/>
             <label className="radio-label">N/A</label>
           </div>
         </div>
@@ -32,15 +45,15 @@ function ApplicationQuestions(): JSX.Element {
         </p>
         <div className="radio-opts">
           <div className="radio-opt">
-            <input type="radio" name="paperWIP" />
+            <input type="radio" name="paperWIP" value="Yes" checked={formData.paperWIP === "Yes"} onChange={handleChange}/>
             <label className="radio-label">Yes</label>
           </div>
           <div className="radio-opt">
-            <input type="radio" name="paperWIP" />
+            <input type="radio" name="paperWIP" value="No" checked={formData.paperWIP === "No"} onChange={handleChange}/>
             <label className="radio-label">No</label>
           </div>
           <div className="radio-opt">
-            <input type="radio" name="paperWIP" />
+            <input type="radio" name="paperWIP" value="N/A" checked={formData.paperWIP === "N/A"} onChange={handleChange}/>
             <label className="radio-label">N/A</label>
           </div>
         </div>
@@ -51,15 +64,15 @@ function ApplicationQuestions(): JSX.Element {
         </p>
         <div className="radio-opts">
           <div className="radio-opt">
-            <input type="radio" name="appliedPatent" />
+            <input type="radio" name="appliedPatent"  checked={formData.appliedPatent === "Yes"} onChange={handleChange}/>
             <label className="radio-label">Yes</label>
           </div>
           <div className="radio-opt">
-            <input type="radio" name="appliedPatent" />
+            <input type="radio" name="appliedPatent"  checked={formData.appliedPatent === "No"} onChange={handleChange}/>
             <label className="radio-label">No</label>
           </div>
           <div className="radio-opt">
-            <input type="radio" name="appliedPatent" />
+            <input type="radio" name="appliedPatent"  checked={formData.appliedPatent === "N/A"} onChange={handleChange}/>
             <label className="radio-label">N/A</label>
           </div>
         </div>
@@ -71,16 +84,16 @@ function ApplicationQuestions(): JSX.Element {
         </p>
         <div className="radio-opts">
           <div className="radio-opt">
-            <input type="radio" name="includedInfo" />
+            <input type="radio" name="includedInfo" checked={formData.includedInfo === "Yes"} onChange={handleChange}/>
             <label className="radio-label">Yes</label>
           </div>
 
           <div className="radio-opt">
-            <input type="radio" name="includedInfo" />
+            <input type="radio" name="includedInfo" checked={formData.includedInfo === "No"} onChange={handleChange}/>
             <label className="radio-label">No</label>
           </div>
           <div className="radio-opt">
-            <input type="radio" name="includedInfo" />
+            <input type="radio" name="includedInfo" checked={formData.includedInfo === "N/A"} onChange={handleChange}/>
             <label className="radio-label">N/A</label>
           </div>
         </div>
@@ -92,26 +105,32 @@ function ApplicationQuestions(): JSX.Element {
           placeholder="Enter amount requested"
           required
           className="text-input"
+          name="amountReqquested"
+          value={formData.amountRequested}
+          onChange={handleChange}
         />
 
         <p className="text-label">Dates of Grant Project*</p>
         <input
           type="text"
-          placeholder="Enter amount requested"
+          placeholder="List dates of grant project"
           required
           className="text-input"
+          name="grantProjDates"
+          value={formData.grantProjDates}
+          onChange={handleChange}
         />
 
         <div className="cont-current-funds">
           <p className="text-label">Continuation of Current Funding: *</p>
           <div className="sub-radio-opts">
             <div className="sub-radio-opt">
-              <input type="radio" name="yes" />
+              <input type="radio" name="contCurrentFunds" checked={formData.contCurrentFunds === "Yes"} onChange={handleChange}/>
               <label>Yes</label>
             </div>
 
             <div className="sub-radio-opt">
-              <input type="radio" name="no" />
+              <input type="radio" name="contCurrentFunds" checked={formData.contCurrentFunds === "No"} onChange={handleChange}/>
               <label>No</label>
             </div>
           </div>
@@ -121,6 +140,8 @@ function ApplicationQuestions(): JSX.Element {
           placeholder="If yes, list years (ex. 2022)"
           required
           className="text-input"
+          name="contCurrentFundsDates"
+          onChange={handleChange}
         />
       </div>
     </div>

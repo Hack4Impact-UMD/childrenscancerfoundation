@@ -11,8 +11,31 @@ function ApplicationForm(): JSX.Element {
     const [currentPage, setCurrentPage] = useState(1);
     const pages = ["My Information", "Application Questions", "Grant Proposal", "Review"];
     const totalPages = pages.length;
-
     const navigate = useNavigate();
+
+    // data we have to send to be displayed in the review page
+    const [formData, setFormData] = useState({
+      projectTitle: '',
+      investigator: '',
+      cancers: '',
+      institution: '',
+      institutionAddress: '',
+      institutionPhone: '',
+      institutionEmail: '',
+      adminName: '',
+      adminAddress: '',
+      adminPhone: '',
+      adminEmail: '',
+      published: '',
+      paperWIP: '',
+      appliedPatent: '',
+      includedInfo: '',
+      amountRequested: '',
+      grantProjDates: '',
+      contCurrentFunds: '',
+      contCurrentFundsDates: '', // display dates next to "Continuation of Current Funding"?
+      file: null
+  });
 
     const goBack = () => {
         if (currentPage > 1) {
@@ -33,13 +56,13 @@ function ApplicationForm(): JSX.Element {
       const renderPage = () => {
         switch (currentPage) {
           case 1:
-            return <Information />
+            return <Information formData={formData} setFormData={setFormData} />
           case 2:
-            return <ApplicationQuestions />
+            return <ApplicationQuestions formData={formData} setFormData={setFormData}/>
           case 3:
             return <GrantProposal />
           case 4:
-            return <Review />
+            return <Review formData={formData}/>
           default:
             return
         }

@@ -49,6 +49,13 @@ function GrantForm(): JSX.Element {
         <p>Upload File (PDF Format)</p>
         <div className="upload-btn-container">
           <button className="upload-btn">Click to upload</button>
+          <input 
+          type="file" 
+          accept=".pdf" 
+           
+          style={{ display: "none" }} 
+          id="file-upload" 
+        />
           <button className="del-icon-container">
             <div className="del-icon"></div>
           </button>
