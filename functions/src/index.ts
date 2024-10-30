@@ -9,8 +9,11 @@
 
 import { onRequest } from "firebase-functions/v2/https";
 import * as logger from "firebase-functions/logger";
+const functions = require("firebase-functions");
+//const admin = require("firebase-admin");
+import * as admin from "firebase-admin";
 
-import * as nodemailer from "nodemailer";
+admin.initializeApp();
 
 // Start writing functions
 // https://firebase.google.com/docs/functions/typescript
@@ -20,34 +23,72 @@ import * as nodemailer from "nodemailer";
 //   response.send("Hello from Firebase!");
 // });
 
-// Set up nodemailer transporter using environment variables
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.SMTP_EMAIL, // Your email from environment variable
-    pass: process.env.SMTP_PASSWORD, // Your password from environment variable
-  },
-});
+export const addReviewerRole = functions.https.onCall(
+  (data: any, context: any) => {
+    return admin
+      .auth()
+      .getUserByEmail(data.email)
+      .then((user: any) => {
+        return admin.auth().setCustomUserClaims(user.uid, {
+          role: "reviewer",
+        });
+      })
+      .then(() => {
+        return {
+          message: `Success! ${data.email} has been made a reviewer.`,
+        };
+      })
+      .catch((err: any) => {
+        return err;
+      });
+  }
+);
 
-// Function to send an email
-export const sendEmail = onRequest(async (req, res) => {
-  const { to, subject, text, html } = req.body;
+export const addApplicantRole = functions.https.onCall(
+  (data: any, context: any) => {
+    return admin
+      .auth()
+      .getUserByEmail(data.email)
+      .then((user: any) => {
+        return admin.auth().setCustomUserClaims(user.uid, {
+          role: "applicant",
+        });
+      })
+      .then(() => {
+        return {
+          message: `Success! ${data.email} has been made an applicant.`,
+        };
+      })
+      .catch((err: any) => {
+        return err;
+      });
+  }
+);
 
-  const mailOptions = {
-    from: process.env.SMTP_EMAIL, // Sender email from env variable
-    to, // Recipient email
-    subject, // Email subject
-    text, // Plain text message
-    html, // HTML content message
-  };
-
+export const getReviewers = onRequest(async (req, res) => {
   try {
-    // Send the email
-    await transporter.sendMail(mailOptions);
-    logger.info("Email sent successfully");
-    res.status(200).send("Email sent successfully!");
+    const reviewerUserIds: string[] = [];
+
+    const listAllUsers = async (nextPageToken?: string) => {
+      const listUsersResult = await admin.auth().listUsers(1000, nextPageToken);
+      listUsersResult.users.forEach((userRecord: admin.auth.UserRecord) => {
+        if (
+          userRecord.customClaims &&
+          userRecord.customClaims["role"] === "reviewer"
+        ) {
+          reviewerUserIds.push(userRecord.uid);
+        }
+      });
+      if (listUsersResult.pageToken) {
+        await listAllUsers(listUsersResult.pageToken);
+      }
+    };
+
+    await listAllUsers();
+
+    res.status(200).json({ reviewers: reviewerUserIds });
   } catch (error) {
-    logger.error("Error sending email:", error);
-    res.status(500).send("Failed to send email.");
+    console.error("Error retrieving reviewers:", error);
+    res.status(500).send("Failed to retrieve reviewers");
   }
 });
