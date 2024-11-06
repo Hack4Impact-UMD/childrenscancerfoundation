@@ -2,6 +2,7 @@ import "./ApplicantDashboard.css";
 import { useEffect, useState } from "react";
 import {FaArrowDown, FaArrowUp, FaFileAlt, FaArrowRight} from "react-icons/fa";
 import logo from "../assets/ccf-logo.png";
+import Banner from "../deadline-banner/DeadlineBanner";
 
 function ApplicantUsersDashboard(): JSX.Element {
 
@@ -15,14 +16,17 @@ function ApplicantUsersDashboard(): JSX.Element {
 
     const [completedApplications, setCompletedApplications] = useState<any>([]);
     const [inProgressApplications, setInProgressApplications] = useState<any>([]);
+    const [deadline, setDeadline] = useState<Date | null>(null);
 
     useEffect(() => {
         // Fetch data from the backend
         //setCompletedApplications(data);
         //setinProgressApplications(data);
+        //setDeadline(data);
 
         setCompletedApplications([{ "applicationType": "NextGen", "status": "FUNDED" }, { "applicationType": "Research Grant", "status": "NOT FUNDED" }]);
         setInProgressApplications([{ "applicationType": "Research Grant", "status": "SUBMITTED: MAY 5, 2024" }]);
+        setDeadline(new Date('2024-12-31T23:59:59'));
     });
 
     return (
@@ -33,7 +37,7 @@ function ApplicantUsersDashboard(): JSX.Element {
                     Applicant Dashboard
                 </h1>
             </div>
-
+            {deadline && <Banner deadline={deadline} />}
             <div className="ApplicantDashboard-sections-content">
                 <div className="ApplicantDashboard-section">
                     <div className="ApplicantDashboard-section-header">
