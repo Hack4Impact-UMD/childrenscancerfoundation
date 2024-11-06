@@ -5,6 +5,7 @@ import './App.css';
 import AccountPageApplicants from './create-acc-pages/create-acc-applicants/CreateAccApplicant';
 import AccountPageReviewers from './create-acc-pages/create-acc-reviewer/CreateAccReviewer';
 import ApplicantUsersDashboard from './applicant-dashboard/ApplicantDashboard';
+import AccountSettingsPage from './settings/settings';
 
 function App(): JSX.Element {
   return (
@@ -61,7 +62,14 @@ function App(): JSX.Element {
           element={
             <AccountPageReviewers />
           } 
-        />            
+        /> 
+        {/* Account settings */}
+        <Route
+          path="/settings" 
+          element={
+            <AccountSettingsPage />
+          } 
+        />             
       </Routes>
     </BrowserRouter>
   );

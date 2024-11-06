@@ -1,0 +1,89 @@
+.AccountSettings {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.AccountSettings-header-container {
+    display: flex;
+    align-items: center;
+}
+
+.AccountSettings-logo {
+    width: 75px;
+    margin-right: 20px;
+}
+
+.AccountSettings-header {
+    font-size: 2rem;
+    color: #BE0019;
+}
+
+.AccountSettings-sections-content {
+    background-color: #F0C567;
+    padding: 20px;
+    border-radius: 8px;
+    min-height: 100vh;
+}
+
+.AccountSettings-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.AccountSettings-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.AccountSettings-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.AccountSetting-personal-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.expand-collapse-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #6e7f91;
+}
+
+.expand-collapse-btn:hover {
+    color: #6e7f91;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    color: #BE0019;
+
+}
+
+.section-icon {
+    margin-right: 10px;
+}
+
+.red-line {
+    border: 1.5px solid #BE0019;
+    border-radius: 2px;
+    display: block;
+    width: 50%;
+    margin: 10px auto;
+}
