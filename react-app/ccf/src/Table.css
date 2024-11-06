@@ -1,147 +1,281 @@
-.proposals-container {
-  width: 100%;
-  padding: 20px;
+/* Layout */
+.table-container {
+  display: flex;
+  height: 97vh;
   font-family: Arial, sans-serif;
+}
+
+/* Slider */
+.slider {
+  display: flex;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.slider-option {
+  padding: 8px 20px;
+  font-size: 14px;
+  border: none;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: #333;
+}
+
+.slider-option.active {
+  background-color: #c0c0c0;
+  color: white;
+}
+
+.table-all {
+  background-color: #D9D9D9;
+  ;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 30px;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #D9D9D9;
+  padding: 20px;
+  transition: width 0.3s ease;
+  overflow: hidden; /* Hide content when collapsed */
+
+}
+
+.sidebar.collapsed {
+  width: 0px;
+  padding: 20px 5px; 
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  margin-bottom: 30px;
+  margin-left: 160px;
+}
+
+.menu {
   display: flex;
   flex-direction: column;
 }
 
-.proposals-header {
-  display: flex;
-  flex-direction: column;;
-  justify-content: space-between;
+.menu-item {
+  width: 204px;          
+  height: 54px;
+  background-color: #FFFFFF99;    
+  font-size: 20px;
+  text-align: left;
+  padding-left: 20px;
+  border: none;            
+  border-radius: 20px;         
+  margin-top: 20px;
+  white-space: nowrap; /* Prevents text wrapping */
+  overflow: hidden; /* Hides text when sidebar is collapsed */
+  transition: opacity 0.3s ease; /* Fade out text when collapsing */
 }
 
-.options {
-  display: flex;
-  flex-direction: row;
+.content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
 }
 
-.tabs {
+/* Header */
+.header {
   display: flex;
-  margin-right: auto;
+  align-items: center;
   gap: 10px;
-  background-color: #ccc;
-  border-radius: 20px;
-  padding: 4px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
 }
 
-.tab {
-  background: #ccc;
-  border: none;
-  padding: 5px 10px;
-  margin-right: 5px;
-  cursor: pointer;
-  border-radius: 15px;
-}
-
-.tab.active {
-  background: rgb(165, 165, 165);
+.logo {
+  width: 80px;
+  height: 80px;
+  background-color: #D9D9D9;
+  border-radius: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: black;
   font-weight: bold;
 }
 
-.actions {
+h1 {
+  font-size: 38px;
+  margin: 0;
+}
+
+/* Table Controls */
+.table-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.tab {
+  padding: 8px 16px;
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.tab.active {
+  background-color: #c0c0c0;
+}
+
+.search-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-sort {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.assign-button,
+.search-input {
+  padding: 8px 30px 8px 10px; /* Add padding on the right for the icon */
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  width: 200px; /* Set the width of the search bar */
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px; /* Adjust to place the icon inside the input */
+  font-size: 16px; /* Adjust icon size */
+  color: #777; /* Color for the icon */
+  pointer-events: none; /* Prevents the icon from interfering with input focus */
+}
+
+.leading-element{
+  width: 56px;
+  height: 56px;
+}
+
 .sort-button {
-  background: #f0f0f0;
+  padding: 8px;
   border: none;
-  padding: 10px 15px;
-  border-radius: 8px;
+  background-color: #FFFFFF;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-.search-input {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 15px;
-}
 
-.proposal-list {
-  margin-top: 20px;
+/* Table Content */
+.table-content {
+  max-height: 400px; /* Adjust this height as needed */
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
 }
 
-.proposal-item {
+.table-row {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  background: #f8f8f8;
   padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
 }
 
 .proposal-info {
   display: flex;
-  align-items: center;
-  gap: 15px;
+  flex-direction: column;
+  margin-left: 20px;
+  width: 40%;
+  align-items: flex-start; /* Aligns items to the top */
 }
 
-.icon-placeholder {
-  width: 50px;
-  height: 50px;
-  background-color: #ccc;
-  border-radius: 50%;
+.proposal-name {
+  font-size: 20px;
 }
 
-.proposal-details h3 {
-  margin: 0;
-  font-size: 16px;
-}
-
-.proposal-details p {
-  margin: 2px 0;
-  color: #666;
+.proposal-details {
   font-size: 14px;
+  color: #00000094;
 }
 
-.proposal-status {
+.status-info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 8px;
+  width: 40%;
+  margin-left: 350px;
+  align-items: center;
+}
+
+/* Optional: styling for each part of the status-info */
+.reviewed, .pending, .status {
+  flex: 1; /* Make each item in status-info take equal space */
+  text-align: center;
+  white-space: nowrap; /* Prevents text wrapping */
+}
+
+
+.reviewed, .pending {
+  color: #00000094;
+  font-size: 18px;
+  z-index: 1; /* Ensures the text is above the circle */
+}
+
+.reviewed-number, .pending-number {
+  width: 16px; /* Adjust as needed for circle size */
+  height: 32px;
+  border-radius: 20px; /* Makes the background circular */
   display: flex;
   align-items: center;
-  gap: 15px;
+  justify-content: center;
+  color: white; /* Makes the text inside the circle white */
+  font-weight: bold; /* Optional: makes the text bold */
+  font-size: 17px; /* Adjust font size as needed */
 }
 
-.proposal-status .reviewed {
-  color: green;
+
+.reviewed-number {
+  background-color: darkgreen; /* Green background for reviewed */
 }
 
-.proposal-status .pending {
-  color: red;
+.pending-number {
+  background-color: #f44336; /* Red background for pending */
+  margin-right: 20px;
 }
 
 .status {
-  padding: 5px 10px;
-  border-radius: 5px;
+  display: flex;
+  padding: 4px 8px;
+  border-radius: 12px;
   font-size: 14px;
+  background-color: #D9D9D9A3;
+  border-radius: 10px;
+  height: 31px;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+  color: gray;
+  margin-right: 20px;
 }
 
-.status.incomplete {
-  background: #ffe0b2;
-  color: #ff9800;
-}
-
-.status.funded {
-  background: #d0e9c6;
-  color: #4caf50;
-}
-
-.status.not-funded {
-  background: #f2dede;
-  color: #d9534f;
-}
-
-.details-button {
+.arrow-button {
   background: none;
   border: none;
-  font-size: 24px;
-  color: #666;
+  font-size: 20px;
   cursor: pointer;
-  font-weight: bold;
+  color: #777;
 }
