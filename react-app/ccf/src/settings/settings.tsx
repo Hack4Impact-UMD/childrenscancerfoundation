@@ -14,9 +14,9 @@ import { checkPasswordRequirements } from "../users/userpasswords";
 function AccountSettingsPage(): JSX.Element {
     //form inputs
     const [currentPassword, setCurrentPassword] = useState("");
-    const [newPassword, setNewPassword] = useState("");
-    const [newPasswordConfirmed, setNewPasswordConfirmed] = useState("");
-
+    const [pwd, setPwd] = useState("");
+    const [confirmPwd, setConfirmPwd] = useState("");
+  
     //password reqs
     const [specialChar, setSpecialChar] = useState(false);
     const [capitalLetter, setCapitalLetter] = useState(false);
@@ -24,17 +24,23 @@ function AccountSettingsPage(): JSX.Element {
     const [showReqs, setShowReqs] = useState(false);
     const [pwdUnmatched, setPwdUnmatched] = useState(false);
 
+    const checkConfirmPwd = () => {
+        if (confirmPwd !== "") {
+          confirmPwd === pwd ? setPwdUnmatched(false) : setPwdUnmatched(true);
+        }
+    };
+
     const handleSubmit = async (e: any) => {
         // don't let user submit if pwd reqs aren't met
         e.preventDefault();
         const functions = getFunctions();
-        const addApplicantRole = httpsCallable(functions, "addApplicantRole");
         console.log(specialChar, capitalLetter, number, showReqs, pwdUnmatched);
         if (!specialChar || !capitalLetter || !number || pwdUnmatched) {
           console.log("Failed to submit. One requirement was not met.");
           e.preventDefault();
           return;
         }
+
         const auth = getAuth();
         const db = getFirestore();
         let user = null;
