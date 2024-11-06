@@ -9,6 +9,7 @@ import {
   deleteUser,
 } from "firebase/auth";
 import { getFirestore, doc, setDoc, deleteDoc } from "firebase/firestore";
+import { checkPasswordRequirements } from "../../users/userpasswords";
 
 function AccountPageApplicants(): JSX.Element {
   //form inputs
@@ -40,13 +41,6 @@ function AccountPageApplicants(): JSX.Element {
     affiliation,
     pwdUnmatched,
   ]);
-
-  /* Check if user input satisfies password requirements */
-  const checkPasswordRequirements = (password: string) => {
-    setSpecialChar(/[\W_]/.test(password)); // Checks for special character
-    setCapitalLetter(/[A-Z]/.test(password)); // Checks for capital letter
-    setNumber(/[0-9]/.test(password)); // Checks for number
-  };
 
   const checkEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.(com|edu|org)$/i;
@@ -177,7 +171,10 @@ function AccountPageApplicants(): JSX.Element {
                 value={pwd}
                 onChange={(e) => {
                   setPwd(e.target.value);
-                  checkPasswordRequirements(e.target.value);
+                  const newRequirements = checkPasswordRequirements(e.target.value);
+                  setSpecialChar(newRequirements.specialChar);
+                  setCapitalLetter(newRequirements.capitalLetter);
+                  setNumber(newRequirements.number);
                 }}
                 onFocus={() => setShowReqs(true)} // Show on focus
                 onBlur={() => setShowReqs(false)}
