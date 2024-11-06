@@ -1,6 +1,7 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ApplicantUsersDashboard from './applicant-dashboard/ApplicantDashboard';
+import FAQPage from './faq_page/FAQPage';
 
 function App(): JSX.Element {
   return (
