@@ -10,6 +10,7 @@ interface FAQItem {
 
 const FAQPage = ({ faqData }: { faqData: FAQItem[] }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   const handleQuestionClick = (index: number) => {
     setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
@@ -17,8 +18,13 @@ const FAQPage = ({ faqData }: { faqData: FAQItem[] }) => {
 
   return (
     <div className="faq-container">
-      {/* Sidebar Navigation */}
-      <div className="faq-sidebar">
+      <div className={`faq-sidebar ${isCollapsed ? 'collapsed' : ''}`}>
+        <div 
+          className="collapse-arrow" 
+          onClick={() => setIsCollapsed(!isCollapsed)}
+        >
+          {isCollapsed ? '>>>' : '<<<'}
+        </div>
         <nav className="sidebar-nav">
           {['Home', 'Account Settings', 'Applications', 'FAQ', 'Contact'].map((item) => (
             <button
@@ -31,7 +37,6 @@ const FAQPage = ({ faqData }: { faqData: FAQItem[] }) => {
         </nav>
       </div>
 
-      {/* Main Content Area */}
       <div className="faq-main-content">
         <div className="faq-header">
           <div className="faq-header">
