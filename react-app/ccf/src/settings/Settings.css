@@ -1,6 +1,13 @@
+.AccountSettings-page {
+    display: flex;
+}
+
 .AccountSettings {
     font-family: Arial, sans-serif;
     color: #333;
+    box-sizing: border-box;
+    margin-left: 50px; 
+    padding: 20px;
 }
 
 .AccountSettings-header-container {
@@ -16,10 +23,11 @@
 .AccountSettings-header {
     font-size: 2rem;
     color: #BE0019;
+    font-family: Lato;
 }
 
 .AccountSettings-sections-content {
-    background-color: #F0C567;
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 8px;
     min-height: 100vh;
@@ -28,9 +36,9 @@
 .AccountSettings-section {
     margin-top: 20px;
     padding: 20px;
-    background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 6px solid #F0C567;
 }
 
 

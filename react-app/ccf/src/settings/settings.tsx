@@ -9,6 +9,7 @@ import { getFirestore, doc, setDoc, deleteDoc } from "firebase/firestore";
 import { checkPasswordRequirements } from "../users/userpasswords";
 import "./Settings.css";
 import logo from '../assets/ccf-logo.png';
+import Sidebar from "../sidebar/Sidebar";
 
 function AccountSettingsPage(): JSX.Element {
     //form inputs
@@ -64,66 +65,73 @@ function AccountSettingsPage(): JSX.Element {
     };
     
     return (
-        <div className="AccountSettings">
-            <div className="AccountSettings-header-container">
-                <img src={logo} className="AccountSettings-logo" alt="logo" />
-                <h1 className="AccountSettings-header">
-                    Applicant Dashboard
-                </h1>
-            </div>
+        <div className="AccountSettings-page">
+            <Sidebar links={[
+                { name: "Home", path: "/" },
+                { name: "Settings", path: "/settings" },
+                { name: "Applications", path: "/applicant-dashboard" }
+            ]} />
+            <div className="AccountSettings">
+                <div className="AccountSettings-header-container">
+                    <img src={logo} className="AccountSettings-logo" alt="logo" />
+                    <h1 className="AccountSettings-header">
+                        Account Settings
+                    </h1>
+                </div>
 
-            <div className="AccountSettings-sections-content">
-                <div className="AccountSettings-section">
-                    <div className="AccountSettings-section-header">
-                        <div className="header-title">
-                            <h2>Personal Information</h2>
+                <div className="AccountSettings-sections-content">
+                    <div className="AccountSettings-section">
+                        <div className="AccountSettings-section-header">
+                            <div className="header-title">
+                                <h2>Personal Information</h2>
+                            </div>
+                            
                         </div>
+
+                        <div className="AccountSetting-personal-info">
+                            <div className="info-row">
+                                <label>First Name</label>
+                                <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+                                <span className="edit-icon">✎</span>
+                            </div>
+                            <div className="info-row">
+                                <label>Last Name</label>
+                                <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} />
+                                <span className="edit-icon">✎</span>
+                            </div>
+                            <div className="info-row">
+                                <label>Title</label>
+                                <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+                                <span className="edit-icon">✎</span>
+                            </div>
+                            <div className="info-row">
+                                <label>Institution</label>
+                                <input type="text" value={institution} onChange={(e) => setInstitution(e.target.value)} />
+                                <span className="edit-icon">✎</span>
+                            </div>
+                        </div>      
+                    </div>
+
+
+
+                    <div className="AccountSettings-section">
+                        <div className="AccountSettings-section-header">
+                            <div className="header-title">
+                                <h2>Account Settings</h2>
+                            </div>
+                        </div>
+                        <div className="info-row">
+                            <label>Username</label>
+                        </div>
+                        <div className="info-row">
+                            <label>Password</label>
+                        </div>
+
+                        
                         
                     </div>
 
-                    <div className="AccountSetting-personal-info">
-                        <div className="info-row">
-                            <label>First Name</label>
-                            <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
-                            <span className="edit-icon">✎</span>
-                        </div>
-                        <div className="info-row">
-                            <label>Last Name</label>
-                            <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} />
-                            <span className="edit-icon">✎</span>
-                        </div>
-                        <div className="info-row">
-                            <label>Title</label>
-                            <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
-                            <span className="edit-icon">✎</span>
-                        </div>
-                        <div className="info-row">
-                            <label>Institution</label>
-                            <input type="text" value={institution} onChange={(e) => setInstitution(e.target.value)} />
-                            <span className="edit-icon">✎</span>
-                        </div>
-                    </div>      
                 </div>
-
-
-
-                <div className="AccountSettings-section">
-                    <div className="AccountSettings-section-header">
-                        <div className="header-title">
-                            <h2>Account Settings</h2>
-                        </div>
-                    </div>
-                    <div className="info-row">
-                        <label>Username</label>
-                    </div>
-                    <div className="info-row">
-                        <label>Password</label>
-                    </div>
-
-                    
-                    
-                </div>
-
             </div>
         </div>
     );
