@@ -81,13 +81,10 @@ function AccountSettingsPage(): JSX.Element {
 
                 <div className="AccountSettings-sections-content">
                     <div className="AccountSettings-section">
-                        <div className="AccountSettings-section-header">
-                            <div className="header-title">
-                                <h2>Personal Information</h2>
-                            </div>
-                            
+                        <div className="header-title">
+                            <h2>Personal Information</h2>
                         </div>
-
+                    
                         <div className="AccountSetting-personal-info">
                             <div className="info-row">
                                 <label>First Name</label>
@@ -115,11 +112,9 @@ function AccountSettingsPage(): JSX.Element {
 
 
                     <div className="AccountSettings-section">
-                        <div className="AccountSettings-section-header">
-                            <div className="header-title">
-                                <h2>Account Settings</h2>
-                            </div>
-                        </div>
+                        <div className="header-title">
+                             <h2>Account Settings</h2>
+                         </div>
                         <div className="info-row">
                             <label>Username</label>
                         </div>
@@ -127,8 +122,7 @@ function AccountSettingsPage(): JSX.Element {
                             <label>Password</label>
                         </div>
 
-                        
-                        
+    
                     </div>
 
                 </div>

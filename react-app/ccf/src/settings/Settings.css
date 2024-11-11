@@ -84,6 +84,28 @@ ul {
 
 }
 
+.info-row {
+    font-family: Lato;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: var(--HeadlineLargeLineHeight);
+    letter-spacing: var(--HeadlineLargeTracking);
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+label {
+    font-family: Lato;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: var(--HeadlineLargeLineHeight);
+    letter-spacing: var(--HeadlineLargeTracking);
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
 .section-icon {
     margin-right: 10px;
 }
