@@ -49,3 +49,18 @@ export const addApplicantRole = functions.https.onCall((data: any, context: any)
         return err;
     });
 });
+
+export const addAdminRole = functions.https.onCall((data: any, context: any) => {
+    return admin.auth().getUserByEmail(data.email).then((user: any) => {
+        return admin.auth().setCustomUserClaims(user.uid, {
+            role: "admin"
+        });
+    }
+    ).then(() => {
+        return {
+            message: `Success! ${data.email} has been made an admin.`
+        };
+    }).catch((err: any) => {
+        return err;
+    });
+});
