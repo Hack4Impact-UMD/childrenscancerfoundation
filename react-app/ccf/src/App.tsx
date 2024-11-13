@@ -60,10 +60,8 @@ function App(): JSX.Element {
           }
         />
         <Route
-          path="/applicant-dashboard"
-          element={
-            <ApplicantUsersDashboard />
-          }
+          path="/applicant-dashboard" 
+          element={<ApplicantUsersDashboard faqData={faqData} email="email@email.com" phone="000-000-0000" hours="Mon - Fri, 9:00AM - 4PM EST"/>}
         />
         {/* Reviewer dashboard */}
         <Route path="/reviewer-dashboard"  

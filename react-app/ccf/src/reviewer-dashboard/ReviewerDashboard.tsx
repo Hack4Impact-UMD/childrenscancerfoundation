@@ -18,14 +18,14 @@ interface FAQItem {
     answer: string;
 }
 
-interface Contact {
+interface ReviewerProp {
     faqData: FAQItem[];
     email: string;
     phone: string;
     hours: string;
 }
 
-function ReviewerDashboard({ faqData, email, phone, hours }: Contact): JSX.Element {
+function ReviewerDashboard({ faqData, email, phone, hours }: ReviewerProp): JSX.Element {
     // State for expandable sections
     const [isApplicationCollapsed, setApplicationCollapsed] = useState(false);
     const [isFAQCollapsed, setFAQCollapsed] = useState(true);
@@ -57,7 +57,6 @@ function ReviewerDashboard({ faqData, email, phone, hours }: Contact): JSX.Eleme
     };
 
     const handleDueDateClick = (dueDate: string) => {
-        // Handle due date button click
         console.log(`Due date clicked: ${dueDate}`);
     };
 
@@ -125,9 +124,9 @@ function ReviewerDashboard({ faqData, email, phone, hours }: Contact): JSX.Eleme
 
                 {showReminder && (
                     <div className="reminder-banner">
-                       
-                            REMINDER: {reviewCount} Reviews Due {currentDueDate}.
-                        
+
+                        REMINDER: {reviewCount} Reviews Due {currentDueDate}.
+
                         <button className="close-button" onClick={() => setShowReminder(false)}>
                             ×
                         </button>
@@ -157,7 +156,7 @@ function ReviewerDashboard({ faqData, email, phone, hours }: Contact): JSX.Eleme
                                                     <FaFileAlt className="application-icon" />
                                                     <p>{application.applicationType}</p>
                                                 </div>
-                                                <button 
+                                                <button
                                                     className="due-date-button"
                                                     onClick={() => handleDueDateClick(application.dueDate)}
                                                 >
@@ -179,7 +178,7 @@ function ReviewerDashboard({ faqData, email, phone, hours }: Contact): JSX.Eleme
                                                     <FaFileAlt className="application-icon" />
                                                     <p>{application.applicationType}</p>
                                                 </div>
-                                                <button 
+                                                <button
                                                     className="due-date-button"
                                                     onClick={() => handleDueDateClick(application.dueDate)}
                                                 >
@@ -201,7 +200,7 @@ function ReviewerDashboard({ faqData, email, phone, hours }: Contact): JSX.Eleme
                                                     <FaFileAlt className="application-icon" />
                                                     <p>{application.applicationType}</p>
                                                 </div>
-                                                <button 
+                                                <button
                                                     className="due-date-button"
                                                     onClick={() => handleDueDateClick(application.dueDate)}
                                                 >
