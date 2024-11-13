@@ -1,7 +1,8 @@
 import "./ApplicantDashboard.css";
 import { useEffect, useState } from "react";
 import {FaArrowDown, FaArrowUp, FaFileAlt, FaArrowRight} from "react-icons/fa";
-import logo from "../assets/ccf-logo.png";
+import logo from "../../assets/ccf-logo.png";
+import Button from "../../components/buttons/Button"
 
 function ApplicantUsersDashboard(): JSX.Element {
 
@@ -90,9 +91,9 @@ function ApplicantUsersDashboard(): JSX.Element {
         
                             <h3>START YOUR APPLICATION:</h3>
                             <div className="ApplicantDashboard-buttons">
-                                <button className="application-btn">NextGen</button>
-                                <button className="application-btn">Research Grant</button>
-                                <button className="application-btn">Non-Research Grant</button>
+                                <Button width="25%" height="46px">NextGen</Button>
+                                <Button width="25%" height="46px">Research Grant</Button>
+                                <Button width="25%" height="46px">Non-Research Grant</Button>
                             </div>
                         </div >
                     )}

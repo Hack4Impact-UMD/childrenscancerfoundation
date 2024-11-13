@@ -1,21 +1,27 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Login from './pages/login';
-import Signup from './pages/signup';
+import Login from './pages/login/login';
 import './App.css';
 import AccountPageApplicants from './create-acc-pages/create-acc-applicants/CreateAccApplicant';
 import AccountPageReviewers from './create-acc-pages/create-acc-reviewer/CreateAccReviewer';
 import ApplicantUsersDashboard from './applicant-dashboard/ApplicantDashboard';
 import ApplicationForm from './application-form/ApplicationForm';
+import AccountPageApplicants from './pages/create-acc-applicants/CreateAccApplicant';
+import AccountPageReviewers from './pages/create-acc-reviewer/CreateAccReviewer';
+import ApplicantUsersDashboard from './pages/applicant-dashboard/ApplicantDashboard';
+import Sidebar from "./components/sidebar/Sidebar";
+import AdminProtectedRoute from './components/Routing/AdminProtectedRoute';
+import ApplicantProtectedRoute from './components/Routing/ApplicantProtectedRoute';
+import ReviewerProtectedRoute from './components/Routing/ReviewerProtectedRoute';
 
 function App(): JSX.Element {
   return (
     <BrowserRouter>
     <Routes>
         <Route
-          path="/" 
+          path="/"
           element={
-            <></>
+              <></>
           } 
         />
         <Route
@@ -47,7 +53,7 @@ function App(): JSX.Element {
         <Route
           path="/applicant-dashboard" 
           element={
-            <ApplicantUsersDashboard />
+            <ApplicantProtectedRoute element={<ApplicantUsersDashboard />} />
           } 
         /> 
         <Route 

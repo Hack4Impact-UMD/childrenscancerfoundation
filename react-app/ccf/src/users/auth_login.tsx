@@ -1,7 +1,7 @@
-import { getAuth, signInWithEmailAndPassword, AuthErrorCodes } from "firebase/auth";
+import { signInWithEmailAndPassword, AuthErrorCodes } from "firebase/auth";
+import { auth } from "../index"
 
 export const loginUser = async (email: string, password: string) => {
-  const auth = getAuth();
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     console.log("Successfully signed in");

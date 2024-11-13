@@ -27,17 +27,6 @@
     border-radius: 4px;
   }
   
-  .button {
-    width: 95%;
-    padding: 10px;
-    background-color: #BE0019;
-    color: #fff;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    margin: 10px 0;
-  }
-  
   .error {
     color: #BE0019;
     margin-bottom: 10px;
@@ -50,7 +39,7 @@
   .imageContainer {
     flex: 1;
     height: 70%;
-    background-image: url('../../public/login.png');
+    background-image: url('../../../public/login.png');
     background-position: center;
     background-size: cover;
     border-radius: 8px;

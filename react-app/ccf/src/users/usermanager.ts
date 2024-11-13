@@ -1,6 +1,6 @@
 import { db } from '../index';
 import { collection, doc, setDoc, deleteDoc, updateDoc, getDoc } from 'firebase/firestore';
-import { ApplicantUser, ReviewerUser } from './usertypes';
+import { ApplicantUser, ReviewerUser } from '../types/usertypes';
 
 // Function to add a new applicant user
 export const addApplicantUser = async (user: ApplicantUser): Promise<void> => {

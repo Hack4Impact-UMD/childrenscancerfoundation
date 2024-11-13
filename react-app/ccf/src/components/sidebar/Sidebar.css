@@ -1,0 +1,64 @@
+/* Sidebar basic styling */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #003366;
+  transition: width 0.3s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.sidebar.collapsed {
+  width: 60px;
+  padding: 10px;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.toggle-btn {
+  background-color: #003366;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: #f4f4f4;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.sidebar-item {
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: #003366;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-item:hover {
+  background-color: #e6e6e6;
+}
+
+.sidebar.collapsed .sidebar-item {
+  display: none;
+}
+
+.sidebar.collapsed + .content {
+  margin-left: 60px;
+}

@@ -1,7 +1,7 @@
 import { doc, setDoc } from "firebase/firestore";
-import { db } from '../index';
-import { uploadFileToStorage } from "../functions/storage";
-import { ApplicationInfo, ApplicationQuestions } from './application-types';
+import { db } from '../../index';
+import { uploadFileToStorage } from "../../storage/storage";
+import { ApplicationInfo, ApplicationQuestions } from '../../types/application-types';
 
 export const writeApplicationInfo = async( 
     applicationInfo: ApplicationInfo, 
