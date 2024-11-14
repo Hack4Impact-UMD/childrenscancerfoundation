@@ -2,44 +2,28 @@ import { useState } from 'react';
 import './ApplicationForm.css';
 import Breadcrumb from './Components/Breadcrumbs';
 import { useNavigate } from 'react-router-dom';
-import Information from './subquestions/Information';
-import ApplicationQuestions from './subquestions/ApplicationQuestions';
+import NRInformation from './subquestions/NRInformation';
+import NRNarrative from './subquestions/NRNarrative';
 import Review from './subquestions/Review';
-import GrantProposal from './subquestions/GrantProposal';
 import AboutGrant from './subquestions/AboutGrant';
 
-type ApplicationFormProps = {
-  type: "Research" | "NextGen";
-};
-
-function ApplicationForm({ type }: ApplicationFormProps): JSX.Element {
+function NRApplicationForm(): JSX.Element {
     const [currentPage, setCurrentPage] = useState(1);
-    const pages = type === "Research" 
-      ? ["About Grant", "My Information", "Application Questions", "Grant Proposal", "Review"]
-      : ["About Grant", "My Information", "Application Questions", "Grant Proposal", "Review"];
+    const pages = ["About Grant", "My Information", "Narrative", "Review"];
     const totalPages = pages.length;
     const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
         projectTitle: '',
-        investigator: '',
-        cancers: '',
+        requester: '',
         institution: '',
-        institutionAddress: '',
         institutionPhone: '',
         institutionEmail: '',
-        adminName: '',
-        adminAddress: '',
-        adminPhone: '',
-        adminEmail: '',
-        published: '',
-        paperWIP: '',
-        appliedPatent: '',
-        includedInfo: '',
+        explanation: '',
+        sources: '',
         amountRequested: '',
-        grantProjDates: '',
-        contCurrentFunds: '',
-        contCurrentFundsDates: '',
+        timeframe: '',
+        additionalInfo: '',
         file: null
     });
 
@@ -59,38 +43,32 @@ function ApplicationForm({ type }: ApplicationFormProps): JSX.Element {
         console.log('Form submitted!');
     };
 
-    // Validation function to check if all required fields are filled
+    // Validation function to check if all fields are filled
     const isFormValid = () => {
         return Object.values(formData).every(field => field !== '' && field !== null);
     };
 
     const renderPage = () => {
         switch (currentPage) {
-          case 1:
-            return <AboutGrant type={type} formData={formData} />;
-          case 2:
-            return <Information formData={formData} setFormData={setFormData} />;
-          case 3:
-            return <ApplicationQuestions formData={formData} setFormData={setFormData} />;
-          case 4:
-            return <GrantProposal type={type} />;
-          case 5:
-            return <Review type={type} formData={formData} />;
-          default:
-            return null;
+            case 1:
+                return <AboutGrant type={"NonResearch"} formData={formData} />;
+            case 2:
+                return <NRInformation formData={formData} setFormData={setFormData} />;
+            case 3:
+                return <NRNarrative formData={formData} setFormData={setFormData} />;
+            case 4:
+                return <Review type={"NonResearch"} formData={formData} />;
+            default:
+                return null;
         }
     };
 
     return (
         <div className="main-container">
-            <h1 className="main-header">
-                {type === "Research" ? "Research Grant Application" : "NextGen Grant Application"}
-            </h1>
+            <h1 className="main-header">Non-Research Grant</h1>
             <Breadcrumb currentPage={currentPage} pages={pages} />
 
-            <h1 className="form-header">
-                {pages[currentPage - 1]}
-            </h1>
+            <h1 className="form-header">{pages[currentPage - 1]}</h1>
             {renderPage()}
 
             <div className="btn-container">
@@ -112,4 +90,4 @@ function ApplicationForm({ type }: ApplicationFormProps): JSX.Element {
     );
 }
 
-export default ApplicationForm;
+export default NRApplicationForm;

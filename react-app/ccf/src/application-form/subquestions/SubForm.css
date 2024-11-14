@@ -77,6 +77,13 @@
     background-color: #eeee;
 }
 
+.text-input2 {
+    border-radius: 20px;
+    padding: 15px;
+    width: 38vw;
+    height: 200px;
+    background-color: #eeee;
+}
 .left-container {
     width: 50%;
 }

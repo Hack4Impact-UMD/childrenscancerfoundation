@@ -56,4 +56,12 @@
     padding-right: 10%;
     border-radius: 20px;
     border: transparent;
+    transition: background-color 0.3s ease;
+}
+
+/* Disabled state for the save button */
+.save-btn.disabled {
+    background-color: #d3d3d3; /* Light grey */
+    color: #808080; /* Dark grey text */
+    cursor: not-allowed;
 }

@@ -21,9 +21,9 @@ const cong = initializeApp(firebaseConfig);
 
 
 // firestore database connection
-// const db = getFirestore();
+const db = getFirestore();
 // // cloud storage connection
-// const storage = getStorage();
+const storage = getStorage();
 // auth connection
 const auth = getAuth();
 // functions connection

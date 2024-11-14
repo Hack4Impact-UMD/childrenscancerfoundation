@@ -3,12 +3,35 @@ import "./SubForm.css";
 import React from "react";
 
 interface ReviewProps {
+  type: any;
   formData: any;
 }
 
 /* Still need to add useState from information*/
-function Review({ formData }: ReviewProps): JSX.Element {
-  return (
+function Review({ type, formData }: ReviewProps): JSX.Element {
+  if (type === "NonResearch") return (
+    <div className="review-form-container">
+    <div className="proposal-text">
+      <p className="text-label">Title of Project: {formData.projectTitle}</p>
+      <p className="text-label">Principal Requestor: {formData.requestor}</p>
+      <p className="text-label">Institution: {formData.institution}</p>
+      <p className="text-label">Phone Number: {formData.institutionPhone}</p>
+      <p className="text-label">Email: {formData.institutionEmail}</p>
+      <p className = "text-label">Explain the Project requested and justify the need for your requested Project: {formData.explanation}</p>
+      <br />
+      <br />
+      <p className="text-label">We ask that you include other sources from which you are seeking to fund the Project and any other funding source, and/or the amount contributed by your Institution/Hospital: {formData.sources}</p>
+      <br />
+      <br />
+      <p className="text-label">Time Frame: {formData.timeframe}</p>
+      <p className="text-label">Signature of Department Head or other person(s) designated to approve grant requests: {formData.signature}</p>
+      <p className="text-label">File: {formData.file}</p>
+    </div>
+  </div>
+  );
+    
+    
+    else return (
     <div className="review-form-container">
       <div className="proposal-text">
         <p className="text-label">Title of Project: {formData.projectTitle}</p>
