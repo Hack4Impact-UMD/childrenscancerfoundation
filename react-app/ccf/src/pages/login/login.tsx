@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { loginUser } from "../../users/auth_login";
+import { loginUser } from "../../services/auth_login";
 import "./login.css";
-import Button from "../../components/buttons/Button"
+import DrHanleyLabImage from "../../assets/Dr. Hanley Lab 1.png";
+import toretsky from "../../assets/toretskywithpatient 1.png";
+import yellowOverlay from "../../assets/yellowoverlay.png";
 
 function Login() {
   const [input, setInput] = useState({ email: "", password: "" });
   const [error, setError] = useState<string | null>(null);
+  const [isWideScreen, setIsWideScreen] = useState<boolean>(
+    window.innerWidth > 750
+  );
 
   const validateEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -18,11 +23,11 @@ function Login() {
     setError("");
     const email = input.email.toLowerCase().trim();
     const password = input.password;
-    if(validateEmail(email) === false){
-      setError("Please enter a valid email address.")
-    }else{
-    const { error: loginError } = await loginUser(email, password);
-    if (loginError) setError(loginError);
+    if (validateEmail(email) === false) {
+      setError("Please enter a valid email address.");
+    } else {
+      const { error: loginError } = await loginUser(email, password);
+      if (loginError) setError(loginError);
     }
   };
 
@@ -33,53 +38,81 @@ function Login() {
     }));
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsWideScreen(window.innerWidth > 750);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <div className="container">
-      <form className="form" onSubmit={handleSubmit}>
-        <div className="logo">
-          <img src="/ccflogo.png" alt="Logo" className="logoImage" />
-        </div>
-        <h1 className="heading">Welcome!</h1>
-        <p>
-          New to Children’s Cancer Foundation? <Link to="/signup">Sign Up</Link>
-        </p>
-        <label htmlFor="email">Email</label>
-        <input
-          name="email"
-          placeholder="Enter your email"
-          type="text"
-          onChange={handleChange}
-          value={input.email}
-          required
-          className="input"
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          name="password"
-          placeholder="Enter your password"
-          onChange={handleChange}
-          value={input.password}
-          type="password"
-          required
-          className="input"
-        />
-        <div className="rememberMe">
-          <input type="checkbox" id="remember" />
-          <label htmlFor="remember"> Remember me for 30 days</label>
-        </div>
-        {error && <p className="error">{error}</p>}
-        <Button
-          variant="red"
-          width="425px"
-          height="50px"
-          borderRadius="25px"
-          type="submit"
-          onClick={() => {}} // The form's onSubmit handler will handle the submission
-        >
-          Log in
-        </Button>
-        <Link to="/forgot-password" className="forgotPasswordLink">Forgot password?</Link>
-      </form>
+      <div className="content">
+        <form className="form" onSubmit={handleSubmit}>
+          <div className="logo">
+            <img src="/ccflogo.png" alt="Logo" className="logoImage" />
+          </div>
+          <h1 className="heading">Welcome!</h1>
+          <div className="loginText">
+            <p>
+              New to CCF?{" "}
+              <Link to="/signup">
+                <u>Create Account</u>
+              </Link>
+            </p>
+          </div>
+
+          <label htmlFor="email">Email</label>
+          <input
+            name="email"
+            placeholder="Enter your email"
+            type="text"
+            onChange={handleChange}
+            value={input.email}
+            required
+            className="input"
+          />
+          <label htmlFor="password">Password</label>
+          <input
+            name="password"
+            placeholder="Enter your password"
+            onChange={handleChange}
+            value={input.password}
+            type="password"
+            required
+            className="input"
+          />
+
+          {error && <p className="error">{error}</p>}
+          <button
+            title="Login"
+            aria-label="Login"
+            type="submit"
+            className="button"
+          >
+            Log in
+          </button>
+          <div className="loginText">
+            <Link to="/forgot-password" className="forgotPasswordLink">
+              <u>Forgot password</u>
+            </Link>
+          </div>
+        </form>
+
+        {isWideScreen && (
+          <div className="imageContainer">
+            <img src={DrHanleyLabImage} alt="image" className="images" />
+            <img src={toretsky} alt="image" className="images" />
+            <div className="yellowOverlay">
+              <img src={yellowOverlay} alt="overlay" className="yellow" />
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
