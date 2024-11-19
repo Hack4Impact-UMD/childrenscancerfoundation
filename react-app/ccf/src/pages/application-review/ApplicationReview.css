@@ -63,4 +63,17 @@
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
+  }
+
+  .ApplicationReview-feedback-box {
+    width: 984px;
+    height: 105px;
+    top: 500px;
+    left: 362px;
+    gap: 0px;
+    border-radius: 10px 0px 0px 0px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    background: #D9D9D980;
+    border: 1px solid #757575
   }  
