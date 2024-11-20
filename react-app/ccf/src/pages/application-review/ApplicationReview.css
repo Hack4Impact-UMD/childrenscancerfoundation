@@ -13,6 +13,17 @@
     margin-left: 50px;
     padding: 30px;
   }
+
+  .ApplicationReview-view-application-link {
+    font-family: Roboto;
+    font-size: 32px;
+    font-weight: 400;
+    text-align: left;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
   
   .ApplicationReview-header-container {
     display: flex;
@@ -63,7 +74,7 @@
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
-  }
+ }
 
   .ApplicationReview-feedback-box {
     width: 984px;
@@ -75,5 +86,64 @@
     border: 1px 0px 0px 0px;
     opacity: 0px;
     background: #D9D9D980;
-    border: 1px solid #757575
-  }  
+    border: 1px solid #757575;
+    border-radius: 10px;
+  }
+
+  .ApplicationReview-enter-score-box {
+    width: 180px;
+    height: 40px;
+    top: 239px;
+    left: 947px;
+    gap: 0px;
+    border-radius: 10px 0px 0px 0px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    background: #D9D9D980;
+    border: 1px solid #757575;
+  }
+
+  .ApplicationReview-top-bottom-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+  }
+
+  .ApplicationReview-label {
+    color: #BE0019;
+    font-family: Lato;
+    font-size: 25px;
+    font-weight: 700;
+    text-align: left;
+  }
+  .ApplicationReview-label-unbold {
+    color: #BE0019;
+    font-family: Lato;
+    font-size: 25px;
+    font-weight: 100;
+    text-align: left;
+  }
+  
+  .ApplicationReview-announcement-text {
+    color: #BE0019;
+    font-size: 29px;
+    font-weight: 700;
+    letter-spacing: 0.75px;
+    text-align: left;
+  }
+
+  .ApplicationReview-button-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .ApplicationReview-button {
+    border-radius: 20px;
+    background-color: #BE0019;
+    width: 265px;
+    height: 60px;
+    top: 2095px;
+    left: 282px;
+  }

@@ -31,7 +31,16 @@ function ApplicationReview(): JSX.Element {
 
         <div className="ApplicationReview-sections-content">
           <div className="ApplicationReview-section">
-            <h2>View Application</h2>
+            <div className="ApplicationReview-top-bottom-container">
+                <a href="#" className="ApplicationReview-view-application-link">VIEW APPLICATION</a>
+                <div>
+                    <text className="ApplicationReview-label">Overall score: </text>
+                    <text className="ApplicationReview-label-unbold">(1 exceptional - 5 poor quality, unrepairable)</text>
+                    <textarea className="ApplicationReview-enter-score-box" placeholder="Enter score."></textarea>
+                </div>
+                <text className="ApplicationReview-label">Feedback: </text>
+                <text className="ApplicationReview-announcement-text">ALL information inputted (unless otherwise noted) WILL be sent to applicant.</text>
+            </div>
             <div>
                 <span className="ApplicationReview-category-heading">SIGNIFICANCE: </span>
                 <span className="ApplicationReview-category-content">How significant is the childhood cancer problem addressed by this proposal? How will the proposed study add to or enhance the currently available methods to prevent, treat or manage childhood cancer?</span>
@@ -57,7 +66,16 @@ function ApplicationReview(): JSX.Element {
                 <span className="ApplicationReview-category-content">Please provide any additional comments that would be helpful to the applicant, such as readability, grantspersonship, etc., especially if the application does not score well.</span>
             </div>
             <textarea className="ApplicationReview-feedback-box" placeholder="Enter feedback."></textarea>
+            <div className="ApplicationReview-top-bottom-container">
+                <text className="ApplicationReview-label">Internal Comments: </text>
+                <text className="ApplicationReview-announcement-text">This info will not be viewable by the applicant. This information is for the review team ONLY.</text>
+                <textarea className="ApplicationReview-feedback-box" placeholder="Enter Internal Comments."></textarea>
+            </div>
           </div>
+        </div>
+        <div className="ApplicationReview-button-row">
+            <button className="ApplicationReview-button">Save Progress</button>
+            <button className="ApplicationReview-button">Submit</button>
         </div>
       </div>
     </div>
