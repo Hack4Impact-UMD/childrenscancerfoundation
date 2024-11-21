@@ -1,12 +1,11 @@
 // import { addApplicantRole, addReviewerRole } from '.';
 import { createUserWithEmailAndPassword } from "firebase/auth"
 import { doc, getDoc, setDoc } from "firebase/firestore";
-import { getFunctions, httpsCallable } from "firebase/functions";
+import { httpsCallable } from "firebase/functions";
 
 
-export async function initializeTestAccounts(db: any, auth: any) {
+export async function initializeTestAccounts(db: any, auth: any, functions: any) {
 
-    const functions = getFunctions();
     const addApplicantRole = httpsCallable(functions, "addApplicantRole");
     const addReviewerRole = httpsCallable(functions, "addReviewerRole");
     const addAdminRole = httpsCallable(functions, "addAdminRole");
@@ -53,11 +52,6 @@ export async function initializeTestAccounts(db: any, auth: any) {
                 await addAdminRole({ email: user.email });
             }
 
-            // await setDoc(doc(db, 'applications', userRecord.user.uid), {
-            //     applicationType: 'Research Grant',
-            //     status: 'SUBMITTED: MAY 5, 2024'
-            // });
-
         } catch (error) {
             console.error('Error creating user:', error);
         }
@@ -82,7 +76,7 @@ export async function initializeTestAccounts(db: any, auth: any) {
 //     console.log('Dummy applications initialized');
 // }
 
-export async function initializeTestEnvironment(db: any, auth: any) {
+export async function initializeTestEnvironment(db: any, auth: any, functions: any) {
     const markerRef = doc(db, 'settings', 'testAccountsInitialized');
 
     const markerDoc = await getDoc(markerRef);
@@ -91,7 +85,7 @@ export async function initializeTestEnvironment(db: any, auth: any) {
         return;
     }
 
-    await initializeTestAccounts(db, auth);
+    await initializeTestAccounts(db, auth, functions);
 
     await setDoc(markerRef, { initialized: true });
 }

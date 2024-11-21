@@ -31,7 +31,7 @@ const functions = getFunctions();
 
 
 //flag for local testing
-// change to true to run using emulator
+// change to true to run -+using emulator
 const useEmulator = false
 
 if (useEmulator) {
@@ -39,7 +39,7 @@ if (useEmulator) {
   connectStorageEmulator(storage, "127.0.0.1", 9199);
   connectAuthEmulator(auth, "http://127.0.0.1:9099");
   connectFunctionsEmulator(functions, "127.0.0.1", 5001);
-  initializeTestEnvironment(db, auth);
+  initializeTestEnvironment(db, auth, functions);
 }
 
 
