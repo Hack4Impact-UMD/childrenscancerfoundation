@@ -210,23 +210,32 @@ ul {
 
 .contact-box {
     border: 3px solid #BE0019;
-    padding: 30px;
+    padding: 10px;
     border-radius: 8px;
     width: 100%;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #ffffff;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     box-sizing: border-box;
 }
 
 .contact-method {
-    flex: 1;
-    margin-right: 20px; 
+    flex: 1rem;
+    text-align: left;
+    margin: 15px 300px;
+}
+
+.contact-method:first-child {
+    margin-left: 0px;
+    margin-bottom: 20px;
+    text-align: left; 
 }
 
 .contact-method:last-child {
-    margin-right: 0;
+    margin-bottom: 10px;
+    text-align: left; 
 }
 
 .contact-method-header {
