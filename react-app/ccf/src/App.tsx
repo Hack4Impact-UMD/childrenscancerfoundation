@@ -58,7 +58,8 @@ function App(): JSX.Element {
         <Route
           path="/applicant-dashboard" 
           element={
-            <ApplicantProtectedRoute element={<ApplicantUsersDashboard />} />
+            <ApplicantUsersDashboard />
+
           } 
         />    
         {/* Admin dashboard */}   
