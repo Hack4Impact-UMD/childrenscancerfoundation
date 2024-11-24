@@ -8,6 +8,7 @@ import { getAnalytics } from "firebase/analytics";
 import firebaseConfig from "./firebase_config/FireConfig";
 import './index.css';
 
+
 //import the connections
 import { getAuth, connectAuthEmulator } from "firebase/auth";
 import { getFirestore, connectFirestoreEmulator } from "firebase/firestore";

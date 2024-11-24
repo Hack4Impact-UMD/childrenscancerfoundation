@@ -2,16 +2,36 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './pages/login/login';
 import './App.css';
-import AccountPageApplicants from './pages/create-acc-applicants/CreateAccApplicant';
-import AccountPageReviewers from './pages/create-acc-reviewer/CreateAccReviewer';
-import ApplicantUsersDashboard from './pages/applicant-dashboard/ApplicantDashboard';
-import Sidebar from "./components/sidebar/Sidebar";
-import AdminProtectedRoute from './components/Routing/AdminProtectedRoute';
-import ApplicantProtectedRoute from './components/Routing/ApplicantProtectedRoute';
-import ReviewerProtectedRoute from './components/Routing/ReviewerProtectedRoute';
-import CreateAccMenu from './pages/create-acc-menu/CreateAccMenu';
+// import ApplicantUsersDashboard from './applicant-dashboard/ApplicantDashboard';
+import ReviewerDashboard from './reviewer-dashboard/ReviewerDashboard';
+import CreateAccMenu from "./pages/create-acc-menu/CreateAccMenu";
+import AccountPageApplicants from "./pages/create-acc-applicants/CreateAccApplicant";
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+function ApplicantUsersDashboard(props: { hours: string, phone: string, faqData: FAQItem[], email: string }) {
+    return null;
+}
 
 function App(): JSX.Element {
+  const faqData: FAQItem[] = [
+    {
+      question: "This is a question?",
+      answer: "This is the answer."
+    },
+    {
+      question: "This is another question?",
+      answer: "This is the answer."
+    },
+    {
+      question: "This is another question?",
+      answer: "This is the answer."
+    }
+  ];
+
   return (
     <BrowserRouter>
     <Routes>
@@ -19,62 +39,49 @@ function App(): JSX.Element {
           path="/"
           element={
               <></>
-          } 
+          }
         />
         <Route
-          path="/Login" 
+          path="/Login"
           element={
             <Login />
-          } 
+          }
         />
         {/* 404 page */}
         <Route
-          path="*" 
+          path="*"
           element={
             <></>
-          } 
+          }
         />
         <Route
-          path="/forgot-password" 
+          path="/forgot-password"
           element={
             <></>
-          } 
+          }
         />
 
         <Route
-          path="/create-account-menu" 
+          path="/create-account-menu"
           element={
             <CreateAccMenu/>
-          } 
+          }
         />
-        
+
         {/* Need to change path to create-account after authentication */}
         <Route
-          path="/create-account-applicants" 
+          path="/create-account-applicants"
           element={
             <AccountPageApplicants />
-          } 
-        />        
+          }
+        />
         <Route
           path="/applicant-dashboard" 
-          element={
-            <ApplicantProtectedRoute element={<ApplicantUsersDashboard />} />
-          } 
-        />    
-        {/* Admin dashboard */}   
-        <Route
-          path="/admin" 
-          element={
-            <></>
-          } 
+          element={<ApplicantUsersDashboard faqData={faqData} email="email@email.com" phone="000-000-0000" hours="Mon - Fri, 9:00AM - 4PM EST"/>}
         />
-        {/* Need to change path to create-account after authentication */}
-        <Route
-          path="/create-account-reviewers" 
-          element={
-            <AccountPageReviewers />
-          } 
-        />            
+        {/* Reviewer dashboard */}
+        <Route path="/reviewer-dashboard"
+          element={<ReviewerDashboard faqData={faqData} email="email@email.com" phone="000-000-0000" hours="Mon - Fri, 9:00AM - 4PM EST" />} />
       </Routes>
     </BrowserRouter>
   );

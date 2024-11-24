@@ -72,7 +72,6 @@ ul {
 .header-title {
     display: flex;
     align-items: center;
-
 }
 
 .section-icon {
@@ -133,4 +132,138 @@ ul {
 .application-status-icon {
     margin-left: 10px;
     color: white;
+}
+
+/* FAQ Specific Styles */
+.faq-content-wrapper {
+    background-color: transparent;
+    padding: 10px;
+}
+
+.faq-item {
+    margin-bottom: 1rem;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.faq-question:hover {
+    background-color: #f5f5f5;
+}
+
+.question-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.question-icon {
+    width: 24px;
+    height: 24px;
+    color: #003E83;
+}
+
+.question-text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    color: #000000;
+}
+
+.faq-answer {
+    margin: 0 1rem 1rem 1rem;
+    padding: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 3px solid #BE0019;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.contact-box {
+    border: 3px solid #BE0019;
+    padding: 10px;
+    border-radius: 8px;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.contact-method {
+    flex: 1rem;
+    text-align: left;
+    margin: 15px 300px;
+}
+
+.contact-method:first-child {
+    margin-left: 0px;
+    margin-bottom: 20px;
+    text-align: left; 
+}
+
+.contact-method:last-child {
+    margin-bottom: 10px;
+    text-align: left; 
+}
+
+.contact-method-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.contact-icon {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 3px;
+    margin-right: 7px;
+    color: #000000;
+    font-size: 1.2rem;
+}
+
+.contact-method-title {
+    font-size: 1.1rem;
+    color: #000000;
+    margin: 0;
+}
+
+.contact-text {
+    margin-bottom: 4px;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.contact-link {
+    color: #000000;
+    text-decoration: underline;
+    margin-right: 10px;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+
+.contact-hours {
+    font-size: 0.85rem;
+    color: #666;
+    margin-left: 7px;
+    display: inline-block;
 }
