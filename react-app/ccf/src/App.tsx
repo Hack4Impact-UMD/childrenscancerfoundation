@@ -18,7 +18,7 @@ function App(): JSX.Element {
         <Route
           path="/"
           element={
-              <Login></Login>
+              <></>
           } 
         />
         <Route

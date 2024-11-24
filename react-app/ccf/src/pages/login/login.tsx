@@ -60,7 +60,7 @@ function Login() {
           <div className="loginText">
             <p>
               New to CCF?{" "}
-              <Link to="/create-account-menu">
+              <Link to="/signup">
                 <u>Create Account</u>
               </Link>
             </p>
