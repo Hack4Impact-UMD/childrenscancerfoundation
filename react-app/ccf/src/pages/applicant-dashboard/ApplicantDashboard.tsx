@@ -1,8 +1,9 @@
 import "./ApplicantDashboard.css";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import {FaArrowDown, FaArrowUp, FaFileAlt, FaArrowRight} from "react-icons/fa";
 import logo from "../../assets/ccf-logo.png";
 import Button from "../../components/buttons/Button"
+import FAQComponent from "../../components/faq/FaqComp";
 
 function ApplicantUsersDashboard(): JSX.Element {
 
@@ -25,6 +26,13 @@ function ApplicantUsersDashboard(): JSX.Element {
         setCompletedApplications([{ "applicationType": "NextGen", "status": "FUNDED" }, { "applicationType": "Research Grant", "status": "NOT FUNDED" }]);
         setInProgressApplications([{ "applicationType": "Research Grant", "status": "SUBMITTED: MAY 5, 2024" }]);
     });
+
+    const faqData = [
+        { question: 'What is React?', answer: 'React is a JavaScript library for building user interfaces.' },
+        { question: 'What is TypeScript?', answer: 'TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.' },
+        { question: 'How do I use this component?', answer: 'Pass a list of questions and answers as props to the FAQComponent.' },
+    ];
+
 
     return (
         <div className="ApplicantDashboard">
@@ -110,13 +118,16 @@ function ApplicantUsersDashboard(): JSX.Element {
                         </button>
                     </div>
                     {!isFAQCollapsed && (
-                        <ul>
-                            <li>Question 1</li>
-                            <li>Question 2</li>
-                            <li>Question 3</li>
-                        </ul>
+                        // <ul>
+                        //     <li>Question 1</li>
+                        //     <li>Question 2</li>
+                        //     <li>Question 3</li>
+                        // </ul>
+                        <div>
+                            <FAQComponent faqs={faqData}/>
+                        </div>
                     )}
-                    
+
                 </div>
 
                 <div className="ApplicantDashboard-section">

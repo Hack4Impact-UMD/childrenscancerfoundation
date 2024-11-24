@@ -1,0 +1,47 @@
+.faq-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    width: 100%; /* Take up the full width */
+    box-sizing: border-box; /* Include padding in width calculation */
+    margin: 0; /* Remove any default margin */
+}
+
+.faq-item {
+    border: 2px solid #b71c1c;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%; /* Each item takes up full width */
+    box-sizing: border-box; /* Prevent overflow from padding */
+}
+
+.faq-question {
+    font-weight: bold;
+    font-size: 18px;
+    color: #b71c1c;
+    display: flex;
+    align-items: center;
+}
+
+.faq-question span {
+    margin-right: 10px; /* Space between the icon and text */
+}
+
+.faq-answer {
+    margin-top: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Optional: Add padding for better spacing on smaller screens */
+body {
+    margin: 0; /* Remove default body margin */
+}
+
+@media (min-width: 768px) {
+    .faq-container {
+        padding: 30px;
+    }
+}
