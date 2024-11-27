@@ -94,7 +94,7 @@ function AccountPageApplicants(): JSX.Element {
         .catch((error) => {
           console.log("Error: ", error);
         });
-      navigate("/login");
+      navigate("/");
     } catch (e) {
       if (user !== null) {
         await deleteUser(user);

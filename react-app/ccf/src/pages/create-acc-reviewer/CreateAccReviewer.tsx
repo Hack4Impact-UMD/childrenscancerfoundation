@@ -89,7 +89,7 @@ function AccountPageReviewers(): JSX.Element {
         console.log('Error: ', error);
       });
       
-      navigate("/login");
+      navigate("/");
     } catch (error) {
       if(user !== null){
         await deleteUser(user);
