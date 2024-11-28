@@ -57,6 +57,7 @@
     background: none;
     border: none;
     cursor: pointer;
+    max-width: 30px;
     font-size: 18px;
     color: #6e7f91;
 }
@@ -72,7 +73,6 @@ ul {
 .header-title {
     display: flex;
     align-items: center;
-
 }
 
 .section-icon {

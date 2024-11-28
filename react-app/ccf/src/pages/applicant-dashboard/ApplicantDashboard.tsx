@@ -1,5 +1,5 @@
 import "./ApplicantDashboard.css";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {FaArrowDown, FaArrowUp, FaFileAlt, FaArrowRight} from "react-icons/fa";
 import logo from "../../assets/ccf-logo.png";
 import Button from "../../components/buttons/Button"
