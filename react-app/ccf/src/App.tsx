@@ -11,6 +11,8 @@ import ApplicantProtectedRoute from './components/Routing/ApplicantProtectedRout
 import ReviewerProtectedRoute from './components/Routing/ReviewerProtectedRoute';
 import CreateAccMenu from './pages/create-acc-menu/CreateAccMenu';
 import DefaultRoute from './components/Routing/DefaultRoute'
+import ReviewerDashboard from "./pages/reviewer-dashboard/ReviewerDashboard";
+import faq_data from "./StaticData/FAQ-REVIEWER";
 
 function App(): JSX.Element {
   return (
@@ -22,6 +24,10 @@ function App(): JSX.Element {
               <DefaultRoute></DefaultRoute>
           } 
         />
+        <Route path="/reviewer-dashboard" element={
+            <ReviewerDashboard faqData={faq_data} email={"email@testing.org"} hours={"10am - 5pm weekdays"} phone={"111-222-3333"}></ReviewerDashboard>
+        }>
+        </Route>
         <Route
           path="/Login" 
           element={

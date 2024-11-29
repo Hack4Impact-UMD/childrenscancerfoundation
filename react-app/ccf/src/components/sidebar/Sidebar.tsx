@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import "./Sidebar.css";
+import SidebarProps from "../../types/sidebar-types";
 
-interface SidebarProps {
-  links: { name: string; path: string }[]; // Accepts an array of link objects as props
-}
 
 const Sidebar: React.FC<SidebarProps> = ({ links }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);

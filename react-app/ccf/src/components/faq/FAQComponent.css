@@ -3,9 +3,9 @@
     padding: 20px;
     border-radius: 8px;
     font-family: Arial, sans-serif;
-    width: 100%; /* Take up the full width */
+    width: 100%; /* Full width */
     box-sizing: border-box; /* Include padding in width calculation */
-    margin: 0; /* Remove any default margin */
+    margin: 0 auto; /* Center the container on the page */
 }
 
 .faq-item {
@@ -13,8 +13,11 @@
     border-radius: 5px;
     padding: 10px;
     margin: 10px 0;
-    width: 100%; /* Each item takes up full width */
-    box-sizing: border-box; /* Prevent overflow from padding */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding in width calculation */
+    display: flex;
+    flex-direction: column; /* Stack question and answer vertically */
+    align-items: flex-start; /* Align content to the left */
 }
 
 .faq-question {
@@ -23,23 +26,23 @@
     color: #b71c1c;
     display: flex;
     align-items: center;
+    text-align: left; /* Align text within the question element to the left */
+    width: 100%; /* Ensure the question takes up full width */
 }
 
 .faq-question span {
-    margin-right: 10px; /* Space between the icon and text */
+    margin-right: 10px; /* Add space between the icon and text */
 }
 
 .faq-answer {
     margin-top: 5px;
     font-size: 16px;
     color: #333;
+    text-align: left; /* Ensure the answer text is left-aligned */
+    width: 100%; /* Full width for the answer */
 }
 
-/* Optional: Add padding for better spacing on smaller screens */
-body {
-    margin: 0; /* Remove default body margin */
-}
-
+/* Optional: Adjust padding for larger screens */
 @media (min-width: 768px) {
     .faq-container {
         padding: 30px;
