@@ -61,7 +61,13 @@ function App(): JSX.Element {
           element={
             <AccountPageReviewers />
           } 
-        />            
+        />
+        <Route
+          path="/post-grant-report" 
+          element={
+            <></>
+          }
+        />         
       </Routes>
     </BrowserRouter>
   );
