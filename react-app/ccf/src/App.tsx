@@ -1,10 +1,15 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Login from './login/login';
+import Login from './pages/login/login';
 import './App.css';
-import AccountPageApplicants from './create-acc-pages/create-acc-applicants/CreateAccApplicant';
-import AccountPageReviewers from './create-acc-pages/create-acc-reviewer/CreateAccReviewer';
-import ApplicantUsersDashboard from './applicant-dashboard/ApplicantDashboard';
+import AccountPageApplicants from './pages/create-acc-applicants/CreateAccApplicant';
+import AccountPageReviewers from './pages/create-acc-reviewer/CreateAccReviewer';
+import ApplicantUsersDashboard from './pages/applicant-dashboard/ApplicantDashboard';
+import Sidebar from "./components/sidebar/Sidebar";
+import AdminProtectedRoute from './components/Routing/AdminProtectedRoute';
+import ApplicantProtectedRoute from './components/Routing/ApplicantProtectedRoute';
+import ReviewerProtectedRoute from './components/Routing/ReviewerProtectedRoute';
+import CreateAccMenu from './pages/create-acc-menu/CreateAccMenu';
 import PostGrantReport from './post-grant-report/post-grant-report';
 
 function App(): JSX.Element {
@@ -12,9 +17,9 @@ function App(): JSX.Element {
     <BrowserRouter>
     <Routes>
         <Route
-          path="/" 
+          path="/"
           element={
-            <></>
+              <></>
           } 
         />
         <Route
@@ -36,6 +41,14 @@ function App(): JSX.Element {
             <></>
           } 
         />
+
+        <Route
+          path="/create-account-menu" 
+          element={
+            <CreateAccMenu/>
+          } 
+        />
+        
         {/* Need to change path to create-account after authentication */}
         <Route
           path="/create-account-applicants" 
@@ -46,7 +59,7 @@ function App(): JSX.Element {
         <Route
           path="/applicant-dashboard" 
           element={
-            <ApplicantUsersDashboard />
+            <ApplicantProtectedRoute element={<ApplicantUsersDashboard />} />
           } 
         />    
         {/* Admin dashboard */}   
