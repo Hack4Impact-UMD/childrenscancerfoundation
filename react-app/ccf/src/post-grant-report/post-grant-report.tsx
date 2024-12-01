@@ -1,14 +1,23 @@
 import "./post-grant-report.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, ChangeEventHandler } from "react";
 import { writePostGrantReport } from "./post-grant-report-submit";
+import { eventNames } from "process";
+import { AnyRecord } from "dns";
 
 function PostGrantReport(): JSX.Element {
+    
+    const [uploadName, setUploadName] = useState<string>("Click to Upload");
 
-    const validFreeText = async (
-        freeText: String
-    ) => {
-        return false;
-    };
+    const updateReportName = async (files: FileList) => {
+        if (files?.length === 0) {
+            setUploadName("Click to Upload")
+        }
+        else if (files?.length === 1) {
+            setUploadName(files[0].name)
+        } else {
+            setUploadName("Please upload only PDF file.")
+        }
+    }
 
     useEffect(() => {
     });
@@ -39,10 +48,13 @@ function PostGrantReport(): JSX.Element {
                             <li>Ongoing/Additional Plans, such as intent for future research using said findings and intent to submit abstracts on funded research to any research publications (crediting funding from CCF)</li>
                         </ol>
                     </div>
+                    
                     <div className="PostGrantReport-subsection">
                         <h3 className="header-title">Upload File (PDF Format)</h3>
-                        {/* Click to Upload Button with X option */}
+                        <input type='file' accept="application/pdf" id="report-pdf" onChange={e => (e.target.files) ? updateReportName(e.target.files) : "Click to Upload"} />
+                        <label className="report-upload" htmlFor="report-pdf">{ uploadName }</label>
                     </div>
+
                     <div className="PostGrantReport-subsection">
                         <div className="attestation">
                             <div><label className="attestation-label">Awardee/Principal Investigator:</label></div>
