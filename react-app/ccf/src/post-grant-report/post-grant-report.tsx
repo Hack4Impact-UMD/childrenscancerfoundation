@@ -1,22 +1,32 @@
 import "./post-grant-report.css";
-import { useEffect, useState, ChangeEventHandler } from "react";
+import { useEffect, useState } from "react";
 import { writePostGrantReport } from "./post-grant-report-submit";
-import { eventNames } from "process";
-import { AnyRecord } from "dns";
 
 function PostGrantReport(): JSX.Element {
-    
-    const [uploadName, setUploadName] = useState<string>("Click to Upload");
 
-    const updateReportName = async (files: FileList) => {
+    const [uploadLabel, setUploadLabel] = useState<string>("Click to Upload");
+    const [reportUploaded, setReportUploaded] = useState<boolean>(false);
+    const [report, setReport] = useState<File | null>(null);
+
+    const updateReport = async (files: FileList) => {
         if (files?.length === 0) {
-            setUploadName("Click to Upload")
+            setUploadLabel("Click to Upload")
+            setReportUploaded(false);
         }
         else if (files?.length === 1) {
-            setUploadName(files[0].name)
+            setUploadLabel(files[0].name);
+            setReport(files[0]);
+            setReportUploaded(true);
         } else {
-            setUploadName("Please upload only PDF file.")
+            setUploadLabel("Please upload only PDF file.")
+            setReportUploaded(false);
         }
+    }
+
+    const removeUpload = async () => {
+        setReport(null);
+        setReportUploaded(false);
+        setUploadLabel("Click to Upload");
     }
 
     useEffect(() => {
@@ -51,8 +61,9 @@ function PostGrantReport(): JSX.Element {
                     
                     <div className="PostGrantReport-subsection">
                         <h3 className="header-title">Upload File (PDF Format)</h3>
-                        <input type='file' accept="application/pdf" id="report-pdf" onChange={e => (e.target.files) ? updateReportName(e.target.files) : "Click to Upload"} />
-                        <label className="report-upload" htmlFor="report-pdf">{ uploadName }</label>
+                        <input type='file' accept="application/pdf" id="report-pdf" onChange={e => (e.target.files) ? updateReport(e.target.files) : "Click to Upload"} />
+                        <label className="report-upload" htmlFor="report-pdf">{ uploadLabel }</label>
+                        {reportUploaded ? <button className="remove-upload" onClick={_ => removeUpload()}><strong>X</strong></button> : <></>}
                     </div>
 
                     <div className="PostGrantReport-subsection">
