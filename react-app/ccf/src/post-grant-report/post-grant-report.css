@@ -24,27 +24,56 @@
     border-radius: 8px;
 }
 
-.PostGrantReport-section {
-    margin-top: 20px;
-    padding: 20px;
-    border-radius: 8px;
-}
-
 .PostGrantReport-section-box {
-    padding: 10px;
     border: 5px solid #BE0019;
     border-radius: 8px;
     background-color: white;
+    margin-top: 20px;
+    padding: 20px;
 }
 
 .PostGrantReport-subsection {
     padding-bottom: 25px;
 }
 
-.PostGrantReport-subsection-attestations {
-    display: flex;
+.PostGrantReport-section-title {
+    color: #003E83;
+    font-size: 1.33rem;
+    margin-bottom: 25px;
+    text-align: center;
 }
 
+ul, ol {
+    padding-left: 50px;
+}
+
+li {
+    font-size: 1.1rem;
+    padding-bottom: 10px;
+}
+
+.header-title {
+    font-size: 1.2rem;
+    padding-bottom: 25px;
+}
+
+.attestation {
+    float: left;
+    width: 33.33%;
+}
+
+.attestation:after {
+    content: "";
+    display: "table";
+    clear: "both";
+}
+
+.attestation-label {
+    font-size: 1rem;
+}
+
+
+/* not using these yet */
 
 .PostGrantReport-buttons {
     display: flex;
@@ -67,13 +96,6 @@
     background-color: #163256;
 }
 
-.PostGrantReport-section-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-bottom: 25px;
-}
-
 .expand-collapse-btn {
     background: none;
     border: none;
@@ -86,30 +108,10 @@
     color: #6e7f91;
 }
 
-ul, ol {
-    padding-left: 50px;
-}
-
-.header-title {
-    margin-bottom: 25px;
-}
-
-
 .red-line {
     border: 1.5px solid #BE0019;
     border-radius: 2px;
     display: block;
     width: 50%;
     margin: 10px auto;
-}
-
-.attestation {
-    float: left;
-    width: 33.33%;
-}
-
-.attestation:after {
-    content: "";
-    display: "table";
-    clear: "both";
 }

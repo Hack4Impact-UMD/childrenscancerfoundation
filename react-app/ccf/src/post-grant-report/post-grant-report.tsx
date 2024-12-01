@@ -29,30 +29,23 @@ function PostGrantReport(): JSX.Element {
 
             <div className="PostGrantReport-sections-content">
                 <div className="PostGrantReport-section-box">
-                    <div className="PostGrantReport-section">
-                        <div className="PostGrantReport-section-header">
-                            <div className="header-title">
-                                <h2>Post-Grant Report</h2>
-                            </div>
-                        </div>
+                        <h2 className="PostGrantReport-section-title">
+                            Post-Grant Report
+                        </h2>
                         <div className="PostGrantReport-subsection">
-                            <div className="header-title">
-                                <h3>In the Post-Grant Report, please submit a 2-3 page Word or PDF file which includes:</h3>
-                            </div>
+                            <h3 className="header-title">In the Post-Grant Report, please submit a 2-3 page Word or PDF file which includes:</h3>
                             <ol>
                                 <li>Research Title</li>
                                 <li>Principal Investigator</li>
                                 <li>Institution</li>
                                 <li>Grant Start and End Dates</li>
                                 <li>Initial Research Goal</li>
-                                <li>Results/Findings - Including relevant graphs, charts, or images</li>
-                                <li>Ongoing/Additional Plans - Such as intent for future research using said findings and intent to submit abstracts on funded research to any research publications (crediting funding from CCF)</li>
+                                <li>Results/Findings, such as relevant graphs, charts, or images</li>
+                                <li>Ongoing/Additional Plans, such as intent for future research using said findings and intent to submit abstracts on funded research to any research publications (crediting funding from CCF)</li>
                             </ol>
                         </div>
                         <div className="PostGrantReport-subsection">
-                            <div className="header-title">
-                                <h3>Upload File (PDF Format)</h3>
-                            </div>
+                            <h3 className="header-title">Upload File (PDF Format)</h3>
                             {/* Click to Upload Button with X option */}
                         </div>
 
@@ -77,7 +70,6 @@ function PostGrantReport(): JSX.Element {
                 <div className="submit">
                     {/* button to save and submit */}
                 </div>
-            </div>
         </div>
     )
 };
