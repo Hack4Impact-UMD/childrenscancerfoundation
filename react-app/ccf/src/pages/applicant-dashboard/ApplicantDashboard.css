@@ -1,31 +1,31 @@
-.PostGrantReport {
+.ApplicantDashboard {
     font-family: Arial, sans-serif;
     color: #333;
 }
 
-.PostGrantReport-header-container {
+.ApplicantDashboard-header-container {
     display: flex;
     align-items: center;
 }
 
-.PostGrantReport-logo {
+.ApplicantDashboard-logo {
     width: 75px;
     margin-right: 20px;
 }
 
-.PostGrantReport-header {
+.ApplicantDashboard-header {
     font-size: 2rem;
     color: #BE0019;
 }
 
-.PostGrantReport-sections-content {
+.ApplicantDashboard-sections-content {
     background-color: #F0C567;
     padding: 20px;
     border-radius: 8px;
     min-height: 100vh;
 }
 
-.PostGrantReport-section {
+.ApplicantDashboard-section {
     margin-top: 20px;
     padding: 20px;
     background-color: #ffffff;
@@ -33,26 +33,24 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.PostGrantReport-application-box {
+.ApplicantDashboard-application-box {
     padding: 10px;
     border: 5px solid #BE0019;
     border-radius: 8px;
     background-color: white;
 }
 
-.PostGrantReport-buttons {
+.ApplicantDashboard-buttons {
     display: flex;
     justify-content: space-around;
     margin-top: 10px;
 }
-
 .ApplicantDashboard-section-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px;
 }
-
 .expand-collapse-btn {
     background: none;
     border: none;
@@ -60,30 +58,23 @@
     font-size: 18px;
     color: #6e7f91;
 }
-
 .expand-collapse-btn:hover {
     color: #6e7f91;
 }
-
 ul {
     padding-left: 20px;
 }
-
 .header-title {
     display: flex;
     align-items: center;
-
 }
-
 .section-icon {
     margin-right: 10px;
 }
-
 .completed-applications,
 .in-progress-applications {
     margin-bottom: 20px;
 }
-
 .red-line {
     border: 1.5px solid #BE0019;
     border-radius: 2px;
@@ -92,7 +83,7 @@ ul {
     margin: 10px auto;
 }
 
-.PostGrantReport-single-application-box {
+.ApplicantDashboard-single-application-box {
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -103,7 +94,7 @@ ul {
     height: 50px;
 }
 
-.PostGrantReport-single-application-box p {
+.ApplicantDashboard-single-application-box p {
     color: white;
 }
 
@@ -111,13 +102,12 @@ ul {
     display: flex;
     align-items: center;
 }
-
 .application-icon {
     background-color: #F0C567;
     margin-right: 10px;
 }
 
-.PostGrantReport-application-status {
+.ApplicantDashboard-application-status {
     display: flex;
     border: #D9D9D980;
     background-color: #D9D9D980;
@@ -129,7 +119,6 @@ ul {
     text-align: center;
     align-items: center;
 }
-
 .application-status-icon {
     margin-left: 10px;
     color: white;
