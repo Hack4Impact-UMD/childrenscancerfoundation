@@ -1,46 +1,52 @@
-.ApplicantDashboard {
+.PostGrantReport {
     font-family: Arial, sans-serif;
     color: #333;
+    background-color: #ffffff;
 }
 
-.ApplicantDashboard-header-container {
+.PostGrantReport-header-container {
     display: flex;
     align-items: center;
 }
 
-.ApplicantDashboard-logo {
+.PostGrantReport-logo {
     width: 75px;
     margin-right: 20px;
 }
 
-.ApplicantDashboard-header {
+.PostGrantReport-header {
     font-size: 2rem;
     color: #BE0019;
 }
 
-.ApplicantDashboard-sections-content {
-    background-color: #F0C567;
+.PostGrantReport-sections-content {
     padding: 20px;
     border-radius: 8px;
-    min-height: 100vh;
 }
 
-.ApplicantDashboard-section {
+.PostGrantReport-section {
     margin-top: 20px;
     padding: 20px;
-    background-color: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.ApplicantDashboard-application-box {
+.PostGrantReport-section-box {
     padding: 10px;
     border: 5px solid #BE0019;
     border-radius: 8px;
     background-color: white;
 }
 
-.ApplicantDashboard-buttons {
+.PostGrantReport-subsection {
+    padding-bottom: 25px;
+}
+
+.PostGrantReport-subsection-attestations {
+    display: flex;
+}
+
+
+.PostGrantReport-buttons {
     display: flex;
     justify-content: space-around;
     margin-top: 10px;
@@ -61,11 +67,11 @@
     background-color: #163256;
 }
 
-.ApplicantDashboard-section-header {
+.PostGrantReport-section-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
+    padding-bottom: 25px;
 }
 
 .expand-collapse-btn {
@@ -80,24 +86,14 @@
     color: #6e7f91;
 }
 
-ul {
-    padding-left: 20px;
+ul, ol {
+    padding-left: 50px;
 }
 
 .header-title {
-    display: flex;
-    align-items: center;
-
+    margin-bottom: 25px;
 }
 
-.section-icon {
-    margin-right: 10px;
-}
-
-.completed-applications,
-.in-progress-applications {
-    margin-bottom: 20px;
-}
 
 .red-line {
     border: 1.5px solid #BE0019;
@@ -107,45 +103,13 @@ ul {
     margin: 10px auto;
 }
 
-.ApplicantDashboard-single-application-box {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    border-radius: 8px;
-    background-color: #003E83;
-    margin-bottom: 20px;
-    height: 50px;
+.attestation {
+    float: left;
+    width: 33.33%;
 }
 
-.ApplicantDashboard-single-application-box p {
-    color: white;
-}
-
-.application-info {
-    display: flex;
-    align-items: center;
-}
-
-.application-icon {
-    background-color: #F0C567;
-    margin-right: 10px;
-}
-
-.ApplicantDashboard-application-status {
-    display: flex;
-    border: #D9D9D980;
-    background-color: #D9D9D980;
-    padding: 10px;
-    width: 300px;
-    height: 30px;
-    border-radius: 8px;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-}
-
-.application-status-icon {
-    margin-left: 10px;
-    color: white;
+.attestation:after {
+    content: "";
+    display: "table";
+    clear: "both";
 }
