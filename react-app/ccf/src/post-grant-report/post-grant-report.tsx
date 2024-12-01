@@ -61,9 +61,11 @@ function PostGrantReport(): JSX.Element {
                     
                     <div className="PostGrantReport-subsection">
                         <h3 className="header-title">Upload File (PDF Format)</h3>
-                        <input type='file' accept="application/pdf" id="report-pdf" onChange={e => (e.target.files) ? updateReport(e.target.files) : "Click to Upload"} />
-                        <label className="report-upload" htmlFor="report-pdf">{ uploadLabel }</label>
-                        {reportUploaded ? <button className="remove-upload" onClick={_ => removeUpload()}><strong>X</strong></button> : <></>}
+                        <div className="report-upload">
+                            <input type='file' accept="application/pdf" id="report-pdf" onChange={e => (e.target.files) ? updateReport(e.target.files) : "Click to Upload"} />
+                            <label className="upload-label" htmlFor="report-pdf">{ uploadLabel }</label>
+                            {reportUploaded ? <button className="remove-upload" onClick={_ => removeUpload()}><strong>X</strong></button> : <></>}
+                        </div>
                     </div>
 
                     <div className="PostGrantReport-subsection">
