@@ -10,6 +10,7 @@ import AdminProtectedRoute from './components/Routing/AdminProtectedRoute';
 import ApplicantProtectedRoute from './components/Routing/ApplicantProtectedRoute';
 import ReviewerProtectedRoute from './components/Routing/ReviewerProtectedRoute';
 import CreateAccMenu from './pages/create-acc-menu/CreateAccMenu';
+import ErrorPage from './pages/error/error';
 
 function App(): JSX.Element {
   return (
@@ -31,7 +32,7 @@ function App(): JSX.Element {
         <Route
           path="*" 
           element={
-            <></>
+            <ErrorPage type="404"/>
           } 
         />
         <Route
