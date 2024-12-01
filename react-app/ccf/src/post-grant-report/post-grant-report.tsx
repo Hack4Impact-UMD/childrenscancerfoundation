@@ -4,11 +4,6 @@ import { writePostGrantReport } from "./post-grant-report-submit";
 
 function PostGrantReport(): JSX.Element {
 
-    type ValuePiece = Date | null;
-    type Value = ValuePiece | [ValuePiece, ValuePiece];
-    const [calendarVisible, setCalendarVisible] = useState(false);
-    const [dateValue, onDateChange] = useState<Value>(new Date());
-
     const validFreeText = async (
         freeText: String
     ) => {
