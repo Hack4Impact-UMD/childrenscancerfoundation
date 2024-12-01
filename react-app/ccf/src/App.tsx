@@ -5,6 +5,7 @@ import './App.css';
 import AccountPageApplicants from './create-acc-pages/create-acc-applicants/CreateAccApplicant';
 import AccountPageReviewers from './create-acc-pages/create-acc-reviewer/CreateAccReviewer';
 import ApplicantUsersDashboard from './applicant-dashboard/ApplicantDashboard';
+import PostGrantReport from './post-grant-report/post-grant-report';
 
 function App(): JSX.Element {
   return (
@@ -65,7 +66,7 @@ function App(): JSX.Element {
         <Route
           path="/post-grant-report" 
           element={
-            <></>
+            <PostGrantReport />
           }
         />         
       </Routes>

@@ -1,31 +1,31 @@
-.ApplicantDashboard {
+.PostGrantReport {
     font-family: Arial, sans-serif;
     color: #333;
 }
 
-.ApplicantDashboard-header-container {
+.PostGrantReport-header-container {
     display: flex;
     align-items: center;
 }
 
-.ApplicantDashboard-logo {
+.PostGrantReport-logo {
     width: 75px;
     margin-right: 20px;
 }
 
-.ApplicantDashboard-header {
+.PostGrantReport-header {
     font-size: 2rem;
     color: #BE0019;
 }
 
-.ApplicantDashboard-sections-content {
+.PostGrantReport-sections-content {
     background-color: #F0C567;
     padding: 20px;
     border-radius: 8px;
     min-height: 100vh;
 }
 
-.ApplicantDashboard-section {
+.PostGrantReport-section {
     margin-top: 20px;
     padding: 20px;
     background-color: #ffffff;
@@ -33,14 +33,14 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.ApplicantDashboard-application-box {
+.PostGrantReport-application-box {
     padding: 10px;
     border: 5px solid #BE0019;
     border-radius: 8px;
     background-color: white;
 }
 
-.ApplicantDashboard-buttons {
+.PostGrantReport-buttons {
     display: flex;
     justify-content: space-around;
     margin-top: 10px;
@@ -61,7 +61,7 @@
     background-color: #163256;
 }
 
-.ApplicantDashboard-section-header {
+.PostGrantReport-section-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -107,7 +107,7 @@ ul {
     margin: 10px auto;
 }
 
-.ApplicantDashboard-single-application-box {
+.PostGrantReport-single-application-box {
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -118,7 +118,7 @@ ul {
     height: 50px;
 }
 
-.ApplicantDashboard-single-application-box p {
+.PostGrantReport-single-application-box p {
     color: white;
 }
 
@@ -132,7 +132,7 @@ ul {
     margin-right: 10px;
 }
 
-.ApplicantDashboard-application-status {
+.PostGrantReport-application-status {
     display: flex;
     border: #D9D9D980;
     background-color: #D9D9D980;
