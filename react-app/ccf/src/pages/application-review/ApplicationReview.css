@@ -1,149 +1,157 @@
-  body {
-    font-family: "Lato", sans-serif;
-  }
-  
-  .ApplicationReview-page {
-    display: flex;
-  }
-  
-  .ApplicationReview {
-    font-family: "Lato", sans-serif;
-    color: #333;
-    box-sizing: border-box;
-    margin-left: 50px;
-    padding: 30px;
-  }
+body {
+  font-family: "Lato", sans-serif;
+}
 
-  .ApplicationReview-view-application-link {
-    font-family: Roboto;
-    font-size: 32px;
-    font-weight: 400;
-    text-align: left;
-    text-decoration-line: underline;
-    text-decoration-style: solid;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
-  }
-  
-  .ApplicationReview-header-container {
-    display: flex;
-    align-items: center;
-  }
-  
-  .ApplicationReview-logo {
-    width: 75px;
-    margin-right: 20px;
-  }
-  
-  .ApplicationReview-header {
-    font-size: 3rem;
-    color: #be0019;
-  }
-  
-  .ApplicationReview-sections-content {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    min-height: 100vh;
-  }
-  
-  .ApplicationReview-section {
-    margin-top: 20px;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: 6px solid #be0019;
-    flex-direction: column;
-  }
+.ApplicationReview-page {
+  display: flex;
+}
 
-  .ApplicationReview-category-heading {
-    font-family: Lato;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 40px;
-    text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
-  }  
+.ApplicationReview {
+  font-family: "Lato", sans-serif;
+  color: #333;
+  box-sizing: border-box;
+  margin-left: 50px;
+  padding: 30px;
+}
 
-  .ApplicationReview-category-question {
-    font-family: Lato;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 40px;
-    text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
- }
+.ApplicationReview-view-application-link {
+  font-family: Roboto;
+  font-size: 32px;
+  font-weight: 400;
+  text-align: left;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
 
-  .ApplicationReview-feedback-box {
-    width: 984px;
-    height: 105px;
-    top: 500px;
-    left: 362px;
-    gap: 0px;
-    border-radius: 10px 0px 0px 0px;
-    border: 1px 0px 0px 0px;
-    opacity: 0px;
-    background: #D9D9D980;
-    border: 1px solid #757575;
-    border-radius: 10px;
-  }
+.ApplicationReview-header-container {
+  display: flex;
+  align-items: center;
+}
 
-  .ApplicationReview-enter-score-box {
-    width: 180px;
-    height: 40px;
-    top: 239px;
-    left: 947px;
-    gap: 0px;
-    border-radius: 10px 0px 0px 0px;
-    border: 1px 0px 0px 0px;
-    opacity: 0px;
-    background: #D9D9D980;
-    border: 1px solid #757575;
-  }
+.ApplicationReview-logo {
+  width: 75px;
+  margin-right: 20px;
+}
 
-  .ApplicationReview-top-bottom-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-items: left;
-  }
+.ApplicationReview-header {
+  font-size: 3rem;
+  color: #be0019;
+}
 
-  .ApplicationReview-label {
-    color: #BE0019;
-    font-family: Lato;
-    font-size: 25px;
-    font-weight: 700;
-    text-align: left;
-  }
-  .ApplicationReview-label-unbold {
-    color: #BE0019;
-    font-family: Lato;
-    font-size: 25px;
-    font-weight: 100;
-    text-align: left;
-  }
-  
-  .ApplicationReview-announcement-text {
-    color: #BE0019;
-    font-size: 29px;
-    font-weight: 700;
-    letter-spacing: 0.75px;
-    text-align: left;
-  }
+.ApplicationReview-sections-content {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  min-height: 100vh;
+}
 
-  .ApplicationReview-button-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+.ApplicationReview-section {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 6px solid #be0019;
+  flex-direction: column;
+}
 
-  .ApplicationReview-button {
-    border-radius: 20px;
-    background-color: #BE0019;
-    width: 265px;
-    height: 60px;
-    top: 2095px;
-    left: 282px;
-  }
+.ApplicationReview-feedback-box,
+.ApplicationReview-enter-score-box {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.ApplicationReview-category-heading {
+  font-family: Lato;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 40px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.ApplicationReview-category-question {
+  font-family: Lato;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 40px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.ApplicationReview-feedback-box {
+  width: 984px;
+  height: 105px;
+  top: 500px;
+  left: 362px;
+  gap: 0px;
+  border-radius: 10px 0px 0px 0px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+  background: #d9d9d980;
+  border: 1px solid #757575;
+  border-radius: 10px;
+}
+
+.ApplicationReview-enter-score-box {
+  width: 180px;
+  height: 40px;
+  top: 239px;
+  left: 947px;
+  gap: 0px;
+  border-radius: 10px 0px 0px 0px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+  background: #d9d9d980;
+  border: 1px solid #757575;
+  margin-left: 20px;
+}
+
+.ApplicationReview-top-bottom-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+}
+
+.ApplicationReview-label {
+  color: #be0019;
+  font-family: Lato;
+  font-size: 25px;
+  font-weight: 700;
+  text-align: left;
+}
+.ApplicationReview-label-unbold {
+  color: #be0019;
+  font-family: Lato;
+  font-size: 25px;
+  font-weight: 100;
+  text-align: left;
+}
+
+.ApplicationReview-announcement-text {
+  color: #be0019;
+  font-size: 29px;
+  font-weight: 700;
+  letter-spacing: 0.75px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.ApplicationReview-button-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ApplicationReview-button {
+  border-radius: 20px;
+  background-color: #be0019;
+  width: 265px;
+  height: 60px;
+  top: 2095px;
+  left: 282px;
+}
