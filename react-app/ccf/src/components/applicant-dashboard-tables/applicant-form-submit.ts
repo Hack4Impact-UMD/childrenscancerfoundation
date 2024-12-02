@@ -42,28 +42,3 @@ export const writeApplicationInfo = async(
         throw error;
     }
 };
-
-export const searchApplications = async (
-    feature: keyof ApplicationInfo, 
-    searchString: string
-) => {
-  try {
-        const lowercaseSearch = searchString.toLowerCase().trim();
-        const applicationsRef = collection(db, 'applications');
-        const q = query(applicationsRef, 
-                        where(feature, '>=', searchString), 
-                        where(feature, '<=', searchString + '\uf8ff')
-                       );
-        const querySnapshot = await getDocs(q);
-    
-        const applications = querySnapshot.docs.map(doc => doc.data());
-        const filteredResults = results.filter(
-            app => String(app[feature]).toLowerCase().includes(lowercaseSearch)
-    );
-    
-        return applications;
-  } catch (error) {
-        console.error("Error searching for applications:", error);
-        throw error;
-  }
-};
