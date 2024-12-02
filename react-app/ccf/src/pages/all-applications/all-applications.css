@@ -1,0 +1,105 @@
+.all-applications-container {
+  padding: 20px;
+  font-family: 'Lato', sans-serif; 
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding-left: 280px;
+}
+
+.logo {
+  width: 100px; 
+  margin-right: 10px;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #BE0019; 
+}
+
+.content {
+  border: 6px solid #BE0019;
+  flex-direction: column;
+  width: 80vw;
+  padding: 20px; 
+  border-radius: 8px;
+  margin-top: 0%;
+}
+
+.cycle-container {
+    width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h2 {
+  margin-left: 10px; 
+  font-size: 1.5rem;
+  position: relative;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.search-input {
+  padding: 10px;
+  right: 0px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.applications-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-left: 20px;
+}
+
+.application-card {
+  background-color: #003E83; 
+  color: white;
+  padding: 15px;
+  margin: 10px 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.application-info {
+  display: flex;
+  align-items: center;
+}
+
+.application-image {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.application-type {
+  font-weight: bold;
+}
+
+.institution-name {
+  margin-top: 5px;
+}
+
+.view-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  right: 0px;
+  width: 20px;
+}

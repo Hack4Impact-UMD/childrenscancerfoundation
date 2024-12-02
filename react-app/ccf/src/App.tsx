@@ -10,6 +10,7 @@ import AdminProtectedRoute from './components/Routing/AdminProtectedRoute';
 import ApplicantProtectedRoute from './components/Routing/ApplicantProtectedRoute';
 import ReviewerProtectedRoute from './components/Routing/ReviewerProtectedRoute';
 import CreateAccMenu from './pages/create-acc-menu/CreateAccMenu';
+import AllApplications from './pages/all-applications/all-applications';
 
 function App(): JSX.Element {
   return (
@@ -58,7 +59,8 @@ function App(): JSX.Element {
         <Route
           path="/applicant-dashboard" 
           element={
-            <ApplicantProtectedRoute element={<ApplicantUsersDashboard />} />
+            // <ApplicantProtectedRoute element={<ApplicantUsersDashboard />} />
+            <ApplicantUsersDashboard/>
           } 
         />    
         {/* Admin dashboard */}   
@@ -74,7 +76,15 @@ function App(): JSX.Element {
           element={
             <AccountPageReviewers />
           } 
-        />            
+        />  
+
+        <Route
+          path="/all-applications" 
+          element={
+            <AllApplications />
+          } 
+        /> 
+
       </Routes>
     </BrowserRouter>
   );

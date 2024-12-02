@@ -1,4 +1,4 @@
-import { doc, setDoc } from "firebase/firestore";
+import { doc, setDoc, collection, query, where, getDocs} from "firebase/firestore";
 import { db } from '../../index';
 import { uploadFileToStorage } from "../../storage/storage";
 import { ApplicationInfo, ApplicationQuestions } from '../../types/application-types';
