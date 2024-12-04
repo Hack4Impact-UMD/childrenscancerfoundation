@@ -15,6 +15,9 @@ import AdminProtectedRoute from './components/Routing/AdminProtectedRoute';
 import ApplicantProtectedRoute from './components/Routing/ApplicantProtectedRoute';
 import ReviewerProtectedRoute from './components/Routing/ReviewerProtectedRoute';
 
+import CreateAccMenu from './pages/create-acc-menu/CreateAccMenu';
+
+
 function App(): JSX.Element {
   return (
     <BrowserRouter>
@@ -44,7 +47,17 @@ function App(): JSX.Element {
             <></>
           } 
         />
-        Need to change path to create-account after authentication
+
+
+        <Route
+          path="/create-account-menu" 
+          element={
+            <CreateAccMenu/>
+          } 
+        />
+        
+        {/* Need to change path to create-account after authentication */}
+
         <Route
           path="/create-account-applicants" 
           element={
