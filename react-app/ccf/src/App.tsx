@@ -10,11 +10,6 @@ import ApplicationForm from './application-form/ApplicationForm';
 import NRApplicationForm from './application-form/NRApplicationForm';
 
 
-import AccountPageApplicants from './pages/create-acc-applicants/CreateAccApplicant';
-import AccountPageReviewers from './pages/create-acc-reviewer/CreateAccReviewer';
-import ApplicantUsersDashboard from './pages/applicant-dashboard/ApplicantDashboard';
-
-
 import Sidebar from "./components/sidebar/Sidebar";
 import AdminProtectedRoute from './components/Routing/AdminProtectedRoute';
 import ApplicantProtectedRoute from './components/Routing/ApplicantProtectedRoute';
