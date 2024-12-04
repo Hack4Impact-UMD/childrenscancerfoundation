@@ -64,15 +64,15 @@ function ApplicationQuestions({ formData, setFormData }: ApplicationQuestionsPro
         </p>
         <div className="radio-opts">
           <div className="radio-opt">
-            <input type="radio" name="appliedPatent"  checked={formData.appliedPatent === "Yes"} onChange={handleChange}/>
+            <input type="radio" name="appliedPatent"  value="Yes" checked={formData.appliedPatent === "Yes"} onChange={handleChange}/>
             <label className="radio-label">Yes</label>
           </div>
           <div className="radio-opt">
-            <input type="radio" name="appliedPatent"  checked={formData.appliedPatent === "No"} onChange={handleChange}/>
+            <input type="radio" name="appliedPatent"  value="No" checked={formData.appliedPatent === "No"} onChange={handleChange}/>
             <label className="radio-label">No</label>
           </div>
           <div className="radio-opt">
-            <input type="radio" name="appliedPatent"  checked={formData.appliedPatent === "N/A"} onChange={handleChange}/>
+            <input type="radio" name="appliedPatent" value="N/A" checked={formData.appliedPatent === "N/A"} onChange={handleChange}/>
             <label className="radio-label">N/A</label>
           </div>
         </div>
@@ -84,16 +84,16 @@ function ApplicationQuestions({ formData, setFormData }: ApplicationQuestionsPro
         </p>
         <div className="radio-opts">
           <div className="radio-opt">
-            <input type="radio" name="includedInfo" checked={formData.includedInfo === "Yes"} onChange={handleChange}/>
+            <input type="radio" name="includedInfo" value="Yes" checked={formData.includedInfo === "Yes"} onChange={handleChange}/>
             <label className="radio-label">Yes</label>
           </div>
 
           <div className="radio-opt">
-            <input type="radio" name="includedInfo" checked={formData.includedInfo === "No"} onChange={handleChange}/>
+            <input type="radio" name="includedInfo" value="No" checked={formData.includedInfo === "No"} onChange={handleChange}/>
             <label className="radio-label">No</label>
           </div>
           <div className="radio-opt">
-            <input type="radio" name="includedInfo" checked={formData.includedInfo === "N/A"} onChange={handleChange}/>
+            <input type="radio" name="includedInfo" value="N/A" checked={formData.includedInfo === "N/A"} onChange={handleChange}/>
             <label className="radio-label">N/A</label>
           </div>
         </div>
