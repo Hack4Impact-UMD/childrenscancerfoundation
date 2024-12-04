@@ -2,9 +2,9 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './pages/login/login';
 import './App.css';
-import AccountPageApplicants from './create-acc-pages/create-acc-applicants/CreateAccApplicant';
-import AccountPageReviewers from './create-acc-pages/create-acc-reviewer/CreateAccReviewer';
-import ApplicantUsersDashboard from './applicant-dashboard/ApplicantDashboard';
+import AccountPageApplicants from './pages/create-acc-applicants/CreateAccApplicant';
+import AccountPageReviewers from './pages/create-acc-reviewer/CreateAccReviewer';
+import ApplicantUsersDashboard from './pages/applicant-dashboard/ApplicantDashboard';
 
 import ApplicationForm from './application-form/ApplicationForm';
 import NRApplicationForm from './application-form/NRApplicationForm';
