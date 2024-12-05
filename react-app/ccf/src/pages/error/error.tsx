@@ -42,7 +42,7 @@ function ErrorPage({ type }: ErrorProps): JSX.Element {
 
   return (
 
-    <div className = "main-container">
+    <div className = "main-container-error">
         <div className="error-page-container">
             <div className="error-content">
                 {renderErrorMessage()}
