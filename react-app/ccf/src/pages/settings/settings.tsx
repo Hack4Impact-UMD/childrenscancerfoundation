@@ -30,8 +30,8 @@ function AccountSettingsPage(): JSX.Element {
       setUsername("example_user");
       setFirstName("John");
       setLastName("Doe");
-      setTitle("Developer");
-      setInstitution("Tech Institute");
+      setTitle("Professor");
+      setInstitution("University of Maryland");
     }, 1000);
   }, []);
 
@@ -163,7 +163,7 @@ function AccountSettingsPage(): JSX.Element {
                   <div className="info-row">
                     <input
                       type="password"
-                      placeholder="Password1!"
+                      placeholder="Password"
                       required
                       value={pwd}
                       onChange={(e) => {
