@@ -13,6 +13,8 @@ import CreateAccMenu from './pages/create-acc-menu/CreateAccMenu';
 import DefaultRoute from './components/Routing/DefaultRoute'
 import ReviewerDashboard from "./pages/reviewer-dashboard/ReviewerDashboard";
 import faq_data from "./StaticData/FAQ-REVIEWER";
+import ApplicationForm from "./pages/application-form/ApplicationForm";
+import NRApplicationForm from "./pages/application-form/NRApplicationForm";
 
 function App(): JSX.Element {
   return (
@@ -81,7 +83,27 @@ function App(): JSX.Element {
           element={
             <AccountPageReviewers />
           } 
-        />            
+        />
+
+        <Route
+            path="/application-form/research"
+            element={<ApplicationForm type="Research" />}
+        />
+        <Route
+            path="/application-form/nextgen"
+            element={<ApplicationForm type="NextGen" />}
+        />
+        <Route
+            path="/application-form/nonresearch"
+            element={<NRApplicationForm />}
+        />
+        {/* Admin dashboard */}
+        <Route path="/admin" element={<></>} />
+        Need to change path to create-account after authentication
+        <Route
+            path="/create-account-reviewers"
+            element={<AccountPageReviewers />}
+        />
       </Routes>
     </BrowserRouter>
   );
