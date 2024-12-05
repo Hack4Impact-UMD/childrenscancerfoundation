@@ -16,6 +16,7 @@ import ReviewerDashboard from "./pages/reviewer-dashboard/ReviewerDashboard";
 import faq_data from "./StaticData/FAQ-REVIEWER";
 import ApplicationForm from "./pages/application-form/ApplicationForm";
 import NRApplicationForm from "./pages/application-form/NRApplicationForm";
+import AccountSettingsPage from "./pages/settings/settings";
 
 
 function App(): JSX.Element {
@@ -111,7 +112,12 @@ function App(): JSX.Element {
             path="/create-account-reviewers"
             element={<AccountPageReviewers />}
         />
+        <Route
+            path={"/settings"}
+            element={<AccountSettingsPage/>}
+        />
       </Routes>
+
     </BrowserRouter>
   );
 }
