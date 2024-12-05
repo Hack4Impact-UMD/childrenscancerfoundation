@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Sidebar.css";
 import SidebarProps from "../../types/sidebar-types";
-
+import { Link } from "react-router-dom"
 
 const Sidebar: React.FC<SidebarProps> = ({ links }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -20,9 +20,11 @@ const Sidebar: React.FC<SidebarProps> = ({ links }) => {
       {!isCollapsed && (
         <ul className="sidebar-menu">
           {links.map((link, index) => (
+            <Link to={link.path}>
             <li key={index} className="sidebar-item">
               {link.name}
             </li>
+            </Link>
           ))}
         </ul>
       )}

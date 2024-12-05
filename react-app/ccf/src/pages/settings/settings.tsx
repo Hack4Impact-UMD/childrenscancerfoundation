@@ -58,14 +58,15 @@ function AccountSettingsPage(): JSX.Element {
     console.log("Password changed successfully:", pwd);
   };
 
+  const sidebarItems = [
+    {name: "Home", path: "/"},
+    {name: "Account Settings", path: "/settings"},
+    {name: "Logout", path: "/login"}
+  ];
+
   return (
       <div>
-      <Sidebar
-          links={[
-            { name: "Home", path: "/" },
-            { name: "Settings", path: "/settings" },
-            { name: "Applications", path: "/applicant-dashboard" },
-          ]}
+      <Sidebar links={sidebarItems}
       />
     <div className="dashboard-container">
 

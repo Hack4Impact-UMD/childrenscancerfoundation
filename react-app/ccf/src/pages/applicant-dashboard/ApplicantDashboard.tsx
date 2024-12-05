@@ -45,9 +45,10 @@ function ApplicantUsersDashboard(): JSX.Element {
         },
     ];
     const sidebarItems = [
-        {name: "Home", path: "/home"},
-        {name: "Account Settings", path: "/account-settings"},
-        {name: "Applications", path: "/applications"},
+        {name: "Home", path: "/"},
+        {name: "Account Settings", path: "/settings"},
+        {name: "Post-Grant Report", path: "/post-grant-report"},
+        {name: "Logout", path: "/login"}
     ];
 
     const navigate = useNavigate();
