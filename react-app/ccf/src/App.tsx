@@ -10,11 +10,13 @@ import AdminProtectedRoute from './components/Routing/AdminProtectedRoute';
 import ApplicantProtectedRoute from './components/Routing/ApplicantProtectedRoute';
 import ReviewerProtectedRoute from './components/Routing/ReviewerProtectedRoute';
 import CreateAccMenu from './pages/create-acc-menu/CreateAccMenu';
+import PostGrantReport from './post-grant-report/post-grant-report';
 import DefaultRoute from './components/Routing/DefaultRoute'
 import ReviewerDashboard from "./pages/reviewer-dashboard/ReviewerDashboard";
 import faq_data from "./StaticData/FAQ-REVIEWER";
 import ApplicationForm from "./pages/application-form/ApplicationForm";
 import NRApplicationForm from "./pages/application-form/NRApplicationForm";
+
 
 function App(): JSX.Element {
   return (
@@ -84,7 +86,12 @@ function App(): JSX.Element {
             <AccountPageReviewers />
           } 
         />
-
+        <Route
+          path="/post-grant-report" 
+          element={
+            <PostGrantReport />
+          }
+        />         
         <Route
             path="/application-form/research"
             element={<ApplicationForm type="Research" />}
